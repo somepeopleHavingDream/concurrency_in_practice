@@ -12,7 +12,6 @@ public class RightWayStopThreadWithSleepEveryLoop {
             int num = 0;
             try {
                 while (num <= 10000) {
-//                while (num <= 10000 && !Thread.currentThread().isInterrupted()) {
                     if (num % 100 == 0) {
                         System.out.println(num + "是100的倍数");
                     }
