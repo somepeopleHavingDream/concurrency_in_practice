@@ -22,19 +22,28 @@ public class MultiThreadsError implements Runnable {
 //        while (index < 10000) {
 //            index++;
 //        }
+        marked[0] = true;
 
         for (int i = 0; i < 10000; i++) {
             try {
+                cyclicBarrier2.reset();
                 cyclicBarrier1.await();
             } catch (InterruptedException | BrokenBarrierException e) {
                 e.printStackTrace();
             }
 
             index++;
+            try {
+                cyclicBarrier1.reset();
+                cyclicBarrier2.await();
+            } catch (InterruptedException | BrokenBarrierException e) {
+                e.printStackTrace();
+            }
+
             realIndex.incrementAndGet();
 
             synchronized (instance) {
-                if (marked[index]) {
+                if (marked[index] && marked[index - 1]) {
                     System.out.println("发生错误" + index);
                     wrongCount.incrementAndGet();
                 }
