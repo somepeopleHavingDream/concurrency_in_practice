@@ -7,6 +7,9 @@ import java.util.concurrent.atomic.AtomicInteger;
 /**
  * 第一种：运行结果出错
  * 演示计数不准确（减少），找出具体出错的位置
+ *
+ * @author yangxin
+ * 2019/10/03 16:14
  */
 public class MultiThreadsError implements Runnable {
     static MultiThreadsError instance = new MultiThreadsError();
