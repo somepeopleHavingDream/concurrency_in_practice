@@ -24,11 +24,19 @@ public class PublishOvershot {
         return states;
     }
 
+    public Map<String, String> getStatesImproved() {
+        return new HashMap<>(states);
+    }
+
     public static void main(String[] args) {
         PublishOvershot publishOvershot = new PublishOvershot();
         Map<String, String> states = publishOvershot.getStates();
-        System.out.println(states.get("1"));
-        states.remove("1");
-        System.out.println(states.get("1"));
+//        System.out.println(states.get("1"));
+//        states.remove("1");
+//        System.out.println(states.get("1"));
+        System.out.println(publishOvershot.getStatesImproved().get("1"));
+        publishOvershot.getStatesImproved().remove("1");
+        System.out.println(publishOvershot.getStatesImproved().get("1"));
+
     }
 }
