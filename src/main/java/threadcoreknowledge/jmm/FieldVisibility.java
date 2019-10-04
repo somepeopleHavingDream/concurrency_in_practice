@@ -8,14 +8,28 @@ package threadcoreknowledge.jmm;
  */
 public class FieldVisibility {
     int a = 1;
-    volatile int b = 2;
+    int b = 2;
+    int c = 2;
+    int d = 2;
+//    volatile int b = 2;
 
     private void change() {
         a = 3;
-        b = a;
+        b = 4;
+        c = 5;
+        synchronized (this) {
+            d = 6;
+        }
+//        b = a;
     }
 
     private void print() {
+        synchronized (this) {
+            int aa = a;
+        }
+        int bb = b;
+        int cc = c;
+        int dd = d;
         System.out.println("b = " + b + "; a = " + a);
     }
 
