@@ -7,7 +7,7 @@ package threadcoreknowledge.jmm;
  * 2019/10/04 15:38
  */
 public class FieldVisibility {
-    volatile int a = 1;
+    int a = 1;
     volatile int b = 2;
 
     private void change() {
