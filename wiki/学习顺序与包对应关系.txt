@@ -10,3 +10,5 @@
 ## 第8章 核心6：一网打尽线程属性 —— threadobjectclasscommonmethods
 ## 第9章 核心7：线程异常处理知多少？—— uncaughtexception
 ## 第10章 核心8：追寻并发的崇高理想-线程安全【日常开发工作常用】—— threadsafe
+## 第11章 多线程的八大核心【最终回】
+## 第12章 深入浅出并发编程底层原理-上篇 —— jmm
