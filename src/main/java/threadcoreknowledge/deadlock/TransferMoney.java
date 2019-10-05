@@ -1,6 +1,7 @@
 package threadcoreknowledge.deadlock;
 
 import lombok.AllArgsConstructor;
+import lombok.ToString;
 
 /**
  * 转账时候遇到死锁，一旦打开注释，便会发生死锁
@@ -34,7 +35,7 @@ public class TransferMoney implements Runnable {
 
     public static void transferMoney(Account from, Account to, int amount) throws InterruptedException {
         synchronized (from) {
-            Thread.sleep(500);
+//            Thread.sleep(500);
             synchronized (to) {
                 if (from.balance - amount < 0) {
                     System.out.println("余额不足，转账失败");
@@ -47,6 +48,7 @@ public class TransferMoney implements Runnable {
     }
 
     @AllArgsConstructor
+    @ToString
     static class Account {
         int balance;
     }
