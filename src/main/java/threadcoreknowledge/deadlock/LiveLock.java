@@ -3,6 +3,7 @@ package threadcoreknowledge.deadlock;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
+import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -42,7 +43,8 @@ public class LiveLock {
                     continue;
                 }
 
-                if (spouse.isHungry) {
+                Random random = new Random();
+                if (spouse.isHungry && random.nextInt(10) < 9) {
                     System.out.println(name + ": 亲爱的" + spouse.name + "你先吃吧");
                     spoon.setOwner(spouse);
                     continue;
