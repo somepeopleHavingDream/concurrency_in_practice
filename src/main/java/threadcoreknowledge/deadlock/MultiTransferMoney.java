@@ -9,7 +9,7 @@ import java.util.Random;
  * 2019/10/05 15:23
  */
 public class MultiTransferMoney {
-    private static final int NUM_ACCOUNT = 5000;
+    private static final int NUM_ACCOUNT = 500;
     private static final int NUM_MONEY = 1000;
     private static final int NUM_ITERATIONS = 1000000;
     private static final int NUM_THREADS = 20;
