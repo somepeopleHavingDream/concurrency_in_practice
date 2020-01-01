@@ -9,7 +9,7 @@ package threadcoreknowledge.cas;
 public class TwoThreadsCompetition implements Runnable {
     private volatile int value;
 
-    public synchronized int compareAndSwap(int expectedValue, int newValue) {
+    private synchronized int compareAndSwap(int expectedValue, int newValue) {
         int oldValue = value;
         if (oldValue == expectedValue) {
             value = newValue;

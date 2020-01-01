@@ -13,8 +13,8 @@ import java.util.concurrent.TimeUnit;
 public class DiningPhilosophers {
     @AllArgsConstructor
     public static class Philosopher implements Runnable {
-        private Object leftChopstick;
-        private Object rightChopstick;
+        private final Object leftChopstick;
+        private final Object rightChopstick;
 
         @Override
         public void run() {

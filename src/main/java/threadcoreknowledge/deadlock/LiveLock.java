@@ -18,7 +18,7 @@ public class LiveLock {
     static class Spoon {
         private Diner owner;
 
-        public synchronized void use() {
+        synchronized void use() {
             System.out.printf("%s has eaten!", owner.name);
         }
     }
@@ -27,12 +27,12 @@ public class LiveLock {
         private String name;
         private boolean isHungry;
 
-        public Diner(String name) {
+        Diner(String name) {
             this.name = name;
             this.isHungry = true;
         }
 
-        public void eatWith(Spoon spoon, Diner spouse) {
+        void eatWith(Spoon spoon, Diner spouse) {
             while (isHungry) {
                 if (spoon.owner != this) {
                     try {

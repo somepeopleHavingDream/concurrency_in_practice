@@ -12,9 +12,9 @@ import java.util.concurrent.locks.ReentrantLock;
  * 2019/10/05 16:52
  */
 public class TryLockDeadlock implements Runnable {
-    int flag = 1;
-    static Lock lock1 = new ReentrantLock();
-    static Lock lock2 = new ReentrantLock();
+    private int flag = 1;
+    private static Lock lock1 = new ReentrantLock();
+    private static Lock lock2 = new ReentrantLock();
 
     @Override
     public void run() {

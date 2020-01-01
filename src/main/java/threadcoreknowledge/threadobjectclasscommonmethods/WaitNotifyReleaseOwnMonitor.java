@@ -7,8 +7,8 @@ package threadcoreknowledge.threadobjectclasscommonmethods;
  * 2019/09/20 11:51
  */
 public class WaitNotifyReleaseOwnMonitor {
-    private static volatile Object resourceA = new Object();
-    private static volatile Object resourceB = new Object();
+    private static final Object resourceA = new Object();
+    private static final Object resourceB = new Object();
 
     public static void main(String[] args) {
         Thread thread1 = new Thread(() -> {

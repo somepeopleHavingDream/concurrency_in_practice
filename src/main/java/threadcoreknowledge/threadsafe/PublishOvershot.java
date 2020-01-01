@@ -12,7 +12,7 @@ import java.util.Map;
 public class PublishOvershot {
     private Map<String, String> states;
 
-    public PublishOvershot() {
+    private PublishOvershot() {
         states = new HashMap<>();
         states.put("1", "周一");
         states.put("2", "周二");
@@ -20,11 +20,11 @@ public class PublishOvershot {
         states.put("4", "周四");
     }
 
-    public Map<String, String> getStates() {
+    private Map<String, String> getStates() {
         return states;
     }
 
-    public Map<String, String> getStatesImproved() {
+    private Map<String, String> getStatesImproved() {
         return new HashMap<>(states);
     }
 

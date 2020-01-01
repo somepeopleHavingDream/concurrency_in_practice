@@ -9,9 +9,9 @@ import java.util.concurrent.TimeUnit;
  * 2019/10/03 16:55
  */
 public class Observer {
-    int count;
+    private int count;
 
-    public Observer(MySource source) {
+    Observer(MySource source) {
         source.registerListener(e -> System.out.println("\n我得到的数字是" + count));
         for (int i = 0; i < 10000; i++) {
             System.out.print(i);

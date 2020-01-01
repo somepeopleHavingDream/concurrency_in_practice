@@ -10,11 +10,11 @@ import lombok.ToString;
  * 2019/10/05 15:07
  */
 public class TransferMoney implements Runnable {
-    int flag = 1;
+    private int flag = 1;
 
-    static Account a = new Account(500);
-    static Account b = new Account(500);
-    static Object lock = new Object();
+    private static Account a = new Account(500);
+    private static Account b = new Account(500);
+    private static final Object lock = new Object();
 
     @Override
     public void run() {
@@ -34,9 +34,9 @@ public class TransferMoney implements Runnable {
         }
     }
 
-    public static void transferMoney(Account from, Account to, int amount) throws InterruptedException {
+    static void transferMoney(Account from, Account to, int amount) throws InterruptedException {
         class Hepler {
-            public void transfer() {
+            private void transfer() {
                 if (from.balance - amount < 0) {
                     System.out.println("余额不足，转账失败");
                 }

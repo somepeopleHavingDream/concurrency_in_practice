@@ -13,7 +13,7 @@ import java.util.concurrent.TimeUnit;
 public class NewThreadInInitFunction {
     private Map<String, String> states;
 
-    public NewThreadInInitFunction() {
+    private NewThreadInInitFunction() {
         new Thread(() -> {
             states = new HashMap<>();
             states.put("1", "周一");
@@ -23,7 +23,7 @@ public class NewThreadInInitFunction {
         }).start();
     }
 
-    public Map<String, String> getStates() {
+    private Map<String, String> getStates() {
         return states;
     }
 

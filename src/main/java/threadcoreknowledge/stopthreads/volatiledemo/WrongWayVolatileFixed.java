@@ -36,7 +36,7 @@ public class WrongWayVolatileFixed {
 
         BlockingQueue storage;
 
-        public Producer(BlockingQueue storage) {
+        Producer(BlockingQueue storage) {
             this.storage = storage;
         }
 
@@ -62,11 +62,11 @@ public class WrongWayVolatileFixed {
     class Consumer {
         BlockingQueue storage;
 
-        public Consumer(BlockingQueue storage) {
+        Consumer(BlockingQueue storage) {
             this.storage = storage;
         }
 
-        public boolean needMoreNums() {
+        boolean needMoreNums() {
             return Math.random() < 0.95;
         }
     }

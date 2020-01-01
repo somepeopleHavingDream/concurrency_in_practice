@@ -9,7 +9,7 @@ import java.util.concurrent.TimeUnit;
  * 2019/10/03 17:23
  */
 public class FixObserver {
-    int count;
+    private int count;
     private EventListener listener;
 
     private FixObserver(MySource source) {

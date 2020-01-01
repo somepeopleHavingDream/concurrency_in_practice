@@ -32,11 +32,11 @@ public class WrongWayVolatileCantStop {
 }
 
 class Producer implements Runnable {
-    public volatile boolean canceled = false;
+    volatile boolean canceled = false;
 
-    BlockingQueue storage;
+    private BlockingQueue storage;
 
-    public Producer(BlockingQueue storage) {
+    Producer(BlockingQueue storage) {
         this.storage = storage;
     }
 
@@ -62,11 +62,11 @@ class Producer implements Runnable {
 class Consumer {
     BlockingQueue storage;
 
-    public Consumer(BlockingQueue storage) {
+    Consumer(BlockingQueue storage) {
         this.storage = storage;
     }
 
-    public boolean needMoreNums() {
+    boolean needMoreNums() {
         return Math.random() < 0.95;
     }
 }

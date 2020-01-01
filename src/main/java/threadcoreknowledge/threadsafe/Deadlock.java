@@ -9,9 +9,9 @@ import java.util.concurrent.TimeUnit;
  * 2019/10/03 16:16
  */
 public class Deadlock implements Runnable {
-    int flag = 1;
-    static Object o1 = new Object();
-    static Object o2 = new Object();
+    private int flag = 1;
+    private static final Object o1 = new Object();
+    private static final Object o2 = new Object();
 
     @Override
     public void run() {

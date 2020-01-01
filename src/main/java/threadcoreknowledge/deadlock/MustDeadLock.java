@@ -9,10 +9,10 @@ import java.util.concurrent.TimeUnit;
  * 2019/10/05 14:51
  */
 public class MustDeadLock implements Runnable {
-    int flag = 1;
+    private int flag = 1;
 
-    static Object o1 = new Object();
-    static Object o2 = new Object();
+    private static final Object o1 = new Object();
+    private static final Object o2 = new Object();
 
     @Override
     public void run() {

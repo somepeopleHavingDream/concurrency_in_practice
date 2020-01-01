@@ -12,13 +12,13 @@ import java.util.concurrent.atomic.AtomicInteger;
  * 2019/10/03 16:14
  */
 public class MultiThreadsError implements Runnable {
-    static MultiThreadsError instance = new MultiThreadsError();
-    int index = 0;
-    final boolean[] marked = new boolean[10000000];
-    static AtomicInteger realIndex = new AtomicInteger();
-    static AtomicInteger wrongCount = new AtomicInteger();
-    static volatile CyclicBarrier cyclicBarrier1 = new CyclicBarrier(2);
-    static volatile CyclicBarrier cyclicBarrier2 = new CyclicBarrier(2);
+    private static MultiThreadsError instance = new MultiThreadsError();
+    private int index = 0;
+    private final boolean[] marked = new boolean[10000000];
+    private static AtomicInteger realIndex = new AtomicInteger();
+    private static AtomicInteger wrongCount = new AtomicInteger();
+    private static volatile CyclicBarrier cyclicBarrier1 = new CyclicBarrier(2);
+    private static volatile CyclicBarrier cyclicBarrier2 = new CyclicBarrier(2);
 
     @Override
     public void run() {

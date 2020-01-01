@@ -22,7 +22,7 @@ public class ProducerConsumerModel {
 class Producer implements Runnable {
     private EventStorage storage;
 
-    public Producer(EventStorage storage) {
+    Producer(EventStorage storage) {
         this.storage = storage;
     }
 
@@ -37,7 +37,7 @@ class Producer implements Runnable {
 class Consumer implements Runnable {
     private EventStorage storage;
 
-    public Consumer(EventStorage storage) {
+    Consumer(EventStorage storage) {
         this.storage = storage;
     }
 
@@ -53,12 +53,12 @@ class EventStorage {
     private int maxSize;
     private LinkedList<Date> storage;
 
-    public EventStorage() {
+    EventStorage() {
         maxSize = 10;
         storage = new LinkedList<>();
     }
 
-    public synchronized void put() {
+    synchronized void put() {
         while (storage.size() == maxSize) {
             try {
                 wait();
@@ -71,7 +71,7 @@ class EventStorage {
         notify();
     }
 
-    public synchronized void take() {
+    synchronized void take() {
         while (storage.size() == 0) {
             try {
                 wait();

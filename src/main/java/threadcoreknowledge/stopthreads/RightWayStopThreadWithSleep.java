@@ -1,6 +1,5 @@
 package threadcoreknowledge.stopthreads;
 
-import java.io.IOException;
 
 /**
  * 带有sleep的中断线程的方法

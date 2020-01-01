@@ -5,8 +5,8 @@ package threadcoreknowledge.jmm;
  * 2019/10/04 17:44
  */
 public class DisappearRequest1 implements Runnable {
-    static DisappearRequest1 instance = new DisappearRequest1();
-    static int i = 0;
+    private static final DisappearRequest1 instance = new DisappearRequest1();
+    private static int i = 0;
 
     @Override
     public void run() {

@@ -9,8 +9,8 @@ import java.util.concurrent.atomic.AtomicInteger;
  * 2019/10/04 17:18
  */
 public class NoVolatile implements Runnable {
-    volatile int a;
-    AtomicInteger realA = new AtomicInteger();
+    private volatile int a;
+    private AtomicInteger realA = new AtomicInteger();
 
     @Override
     public void run() {
@@ -21,14 +21,14 @@ public class NoVolatile implements Runnable {
     }
 
     public static void main(String[] args) throws InterruptedException {
-        Runnable r = new NoVolatile();
+        NoVolatile r = new NoVolatile();
         Thread thread1 = new Thread(r);
         Thread thread2 = new Thread(r);
         thread1.start();
         thread2.start();
         thread1.join();
         thread2.join();
-        System.out.println(((NoVolatile) r).a);
-        System.out.println(((NoVolatile) r).realA.get());
+        System.out.println(r.a);
+        System.out.println(r.realA.get());
     }
 }
