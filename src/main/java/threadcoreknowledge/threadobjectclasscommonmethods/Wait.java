@@ -1,5 +1,7 @@
 package threadcoreknowledge.threadobjectclasscommonmethods;
 
+import java.util.concurrent.TimeUnit;
+
 /**
  * 展示wait和notify的基本用法
  * 1. 研究代码执行顺序
@@ -9,7 +11,7 @@ package threadcoreknowledge.threadobjectclasscommonmethods;
  * 2019/09/19 11:47
  */
 public class Wait {
-    public static Object object = new Object();
+    private static final Object object = new Object();
 
     static class Thread1 extends Thread {
         @Override
@@ -40,7 +42,8 @@ public class Wait {
         Thread1 thread1 = new Thread1();
         Thread2 thread2 = new Thread2();
         thread1.start();
-        Thread.sleep(200);
+        TimeUnit.MILLISECONDS.sleep(200);
+//        Thread.sleep(200);
         thread2.start();
     }
 }
