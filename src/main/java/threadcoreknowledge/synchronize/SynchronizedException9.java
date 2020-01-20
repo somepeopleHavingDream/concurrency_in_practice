@@ -25,10 +25,16 @@ public class SynchronizedException9 implements Runnable {
         }
     }
 
-    public synchronized void method1() throws InterruptedException {
+    public synchronized void method1() {
         System.out.println("我是静态加锁的方法1。我叫：" + Thread.currentThread().getName());
-        TimeUnit.MILLISECONDS.sleep(3000);
-        System.out.println(Thread.currentThread().getName() + "运行结束！");
+        try {
+            TimeUnit.MILLISECONDS.sleep(3000);
+//            throw new Exception();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        throw new RuntimeException();
+//        System.out.println(Thread.currentThread().getName() + "运行结束！");
     }
 
     public synchronized void method2() throws InterruptedException {
