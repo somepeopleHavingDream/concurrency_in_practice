@@ -14,11 +14,11 @@ public class WrongWayVolatileFixed {
         WrongWayVolatileFixed body = new WrongWayVolatileFixed();
 
         ArrayBlockingQueue storage = new ArrayBlockingQueue<>(10);
-        Producer producer = body.new Producer(storage);
+        Producer producer = new Producer(storage);
         Thread producerThread = new Thread(producer);
         producerThread.start();
 
-        Consumer consumer = body.new Consumer(storage);
+        Consumer consumer = new Consumer(storage);
         while (consumer.needMoreNums()) {
             System.out.println(consumer.storage.take() + "被消费了");
             Thread.sleep(100);
@@ -31,7 +31,7 @@ public class WrongWayVolatileFixed {
         producerThread.interrupt();
     }
 
-    class Producer implements Runnable {
+    static class Producer implements Runnable {
         public volatile boolean canceled = false;
 
         BlockingQueue storage;
@@ -59,7 +59,7 @@ public class WrongWayVolatileFixed {
         }
     }
 
-    class Consumer {
+    static class Consumer {
         BlockingQueue storage;
 
         Consumer(BlockingQueue storage) {
