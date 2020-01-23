@@ -12,7 +12,6 @@ public class RightWayStopThreadWithoutSleep implements Runnable {
     public void run() {
         int num = 0;
         while (!Thread.currentThread().isInterrupted() && num <= Integer.MAX_VALUE / 2) {
-//        while (num <= Integer.MAX_VALUE / 2) {
             if (num % 10000 == 0) {
                 System.out.println(num + "是10000的倍数");
             }

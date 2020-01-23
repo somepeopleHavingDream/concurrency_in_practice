@@ -13,7 +13,8 @@ import java.util.concurrent.BlockingQueue;
  */
 public class WrongWayVolatileCantStop {
     public static void main(String[] args) throws InterruptedException {
-        ArrayBlockingQueue storage = new ArrayBlockingQueue<>(10);
+        BlockingQueue<Integer> storage = new ArrayBlockingQueue<>(10);
+//        ArrayBlockingQueue<Integer> storage = new ArrayBlockingQueue<>(10);
         Producer producer = new Producer(storage);
         Thread producerThread = new Thread(producer);
         producerThread.start();
@@ -34,9 +35,9 @@ public class WrongWayVolatileCantStop {
 class Producer implements Runnable {
     volatile boolean canceled = false;
 
-    private BlockingQueue storage;
+    private BlockingQueue<Integer> storage;
 
-    Producer(BlockingQueue storage) {
+    Producer(BlockingQueue<Integer> storage) {
         this.storage = storage;
     }
 
