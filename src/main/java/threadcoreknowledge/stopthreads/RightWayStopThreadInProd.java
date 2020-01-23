@@ -23,11 +23,7 @@ public class RightWayStopThreadInProd implements Runnable {
     }
 
     private void throwInMethod() throws InterruptedException {
-//        try {
-            Thread.sleep(2000);
-//        } catch (InterruptedException e) {
-//            e.printStackTrace();
-//        }
+        Thread.sleep(2000);
     }
 
     public static void main(String[] args) throws InterruptedException {
