@@ -28,7 +28,6 @@ public class WrongWayVolatileFixed {
     }
 
     class Producer implements Runnable {
-        public volatile boolean canceled = false;
 
         BlockingQueue<Integer> storage;
 
