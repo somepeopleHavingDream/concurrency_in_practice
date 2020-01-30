@@ -14,7 +14,6 @@ import java.util.concurrent.BlockingQueue;
 public class WrongWayVolatileCantStop {
     public static void main(String[] args) throws InterruptedException {
         BlockingQueue<Integer> storage = new ArrayBlockingQueue<>(10);
-//        ArrayBlockingQueue<Integer> storage = new ArrayBlockingQueue<>(10);
         Producer producer = new Producer(storage);
         Thread producerThread = new Thread(producer);
         producerThread.start();
@@ -47,6 +46,7 @@ class Producer implements Runnable {
         try {
             while (num <= 100000 && !canceled) {
                 if (num % 100 == 0) {
+                    // 入队之后马上就会释放锁，导致canceled值变更后程序无法察觉
                     storage.put(num);
                     System.out.println(num + "是100的倍数，被放到仓库中了。");
                 }
@@ -55,6 +55,7 @@ class Producer implements Runnable {
         } catch (InterruptedException e) {
             e.printStackTrace();
         } finally {
+            // 这句话未被打印，程序仍然在跑死循环
             System.out.println("生产者结束运行");
         }
     }

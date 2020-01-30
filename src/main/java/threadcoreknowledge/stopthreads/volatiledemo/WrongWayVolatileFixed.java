@@ -13,7 +13,7 @@ public class WrongWayVolatileFixed {
     public static void main(String[] args) throws InterruptedException {
         WrongWayVolatileFixed body = new WrongWayVolatileFixed();
 
-        ArrayBlockingQueue storage = new ArrayBlockingQueue<>(10);
+        BlockingQueue<Integer> storage = new ArrayBlockingQueue<>(10);
         Producer producer = body.new Producer(storage);
         Thread producerThread = new Thread(producer);
         producerThread.start();
@@ -24,19 +24,15 @@ public class WrongWayVolatileFixed {
             Thread.sleep(100);
         }
         System.out.println("消费者不需要更多数据了。");
-
-        // 一旦消费者不需要更多数据了，我们应该让生产者也停下来，但是实际情况
-//        producer.canceled = true;
-//        System.out.println(producer.canceled);
         producerThread.interrupt();
     }
 
     class Producer implements Runnable {
         public volatile boolean canceled = false;
 
-        BlockingQueue storage;
+        BlockingQueue<Integer> storage;
 
-        Producer(BlockingQueue storage) {
+        Producer(BlockingQueue<Integer> storage) {
             this.storage = storage;
         }
 
