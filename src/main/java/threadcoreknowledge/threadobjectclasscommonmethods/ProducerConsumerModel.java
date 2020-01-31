@@ -2,6 +2,7 @@ package threadcoreknowledge.threadobjectclasscommonmethods;
 
 import java.util.Date;
 import java.util.LinkedList;
+import java.util.Queue;
 
 /**
  * 用wait/notify来实现
@@ -51,7 +52,8 @@ class Consumer implements Runnable {
 
 class EventStorage {
     private int maxSize;
-    private LinkedList<Date> storage;
+    private Queue<Date> storage;
+//    private LinkedList<Date> storage;
 
     EventStorage() {
         maxSize = 10;
