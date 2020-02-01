@@ -12,7 +12,7 @@ public class JoinPrinciple {
     public static void main(String[] args) throws InterruptedException {
         Thread thread1 = new Thread(() -> {
             try {
-                TimeUnit.MICROSECONDS.sleep(1000);
+                TimeUnit.MILLISECONDS.sleep(5000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
