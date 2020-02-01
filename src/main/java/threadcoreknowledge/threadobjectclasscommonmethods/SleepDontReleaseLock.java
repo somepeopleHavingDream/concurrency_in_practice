@@ -7,11 +7,11 @@ import java.util.concurrent.locks.ReentrantLock;
  * 演示sleep不释放lock(lock需要手动释放）
  */
 public class SleepDontReleaseLock implements Runnable {
-    private static final Lock lock = new ReentrantLock();
+    private static final Lock LOCK = new ReentrantLock();
 
     @Override
     public void run() {
-        lock.lock();
+        LOCK.lock();
         System.out.println("线程" + Thread.currentThread().getName() + "获取到了锁");
 
         try {
@@ -20,7 +20,7 @@ public class SleepDontReleaseLock implements Runnable {
         } catch (InterruptedException e) {
             e.printStackTrace();
         } finally {
-            lock.unlock();
+            LOCK.unlock();
         }
     }
 

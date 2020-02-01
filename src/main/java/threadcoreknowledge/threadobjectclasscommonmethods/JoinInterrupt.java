@@ -14,7 +14,6 @@ public class JoinInterrupt {
                 TimeUnit.MILLISECONDS.sleep(5000);
                 System.out.println("Thread1 finished");
             } catch (InterruptedException e) {
-//                e.printStackTrace();
                 System.out.println("子线程中断");
             }
         });
@@ -24,8 +23,8 @@ public class JoinInterrupt {
             thread1.join();
         } catch (InterruptedException e) {
             System.out.println(Thread.currentThread().getName() + "主线程中断了");
+            // 当主线程被中断，主线程等待的子线程也应中断
             thread1.interrupt();
-            //            e.printStackTrace();
         }
         System.out.println("子线程已运行完毕");
     }
