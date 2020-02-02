@@ -22,9 +22,6 @@ public class MultiThreadsError implements Runnable {
 
     @Override
     public void run() {
-//        while (index < 10000) {
-//            index++;
-//        }
         marked[0] = true;
 
         for (int i = 0; i < 10000; i++) {
