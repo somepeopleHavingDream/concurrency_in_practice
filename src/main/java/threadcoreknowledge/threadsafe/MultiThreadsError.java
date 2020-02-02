@@ -12,7 +12,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  * 2019/10/03 16:14
  */
 public class MultiThreadsError implements Runnable {
-    private static MultiThreadsError instance = new MultiThreadsError();
+    private static final MultiThreadsError instance = new MultiThreadsError();
     private int index = 0;
     private final boolean[] marked = new boolean[10000000];
     private static AtomicInteger realIndex = new AtomicInteger();
@@ -22,9 +22,6 @@ public class MultiThreadsError implements Runnable {
 
     @Override
     public void run() {
-//        while (index < 10000) {
-//            index++;
-//        }
         marked[0] = true;
 
         for (int i = 0; i < 10000; i++) {

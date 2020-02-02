@@ -10,7 +10,7 @@ import java.util.concurrent.TimeUnit;
  * @author yangxin
  * 2019/10/03 16:45
  */
-public class UninitialzedOvershoot {
+public class UninitializedOvershoot {
     static Point point;
 
     public static void main(String[] args) throws InterruptedException {
@@ -28,7 +28,7 @@ class Point {
 
     Point(int x, int y) throws InterruptedException {
         this.x = x;
-        UninitialzedOvershoot.point = this;
+        UninitializedOvershoot.point = this;
         TimeUnit.MICROSECONDS.sleep(1);
         this.y = y;
     }
