@@ -12,12 +12,17 @@ import java.util.concurrent.BlockingQueue;
  * 2019/09/18 14:57
  */
 public class WrongWayVolatileCantStop {
+
     public static void main(String[] args) throws InterruptedException {
+        // 阻塞队列
         BlockingQueue<Integer> storage = new ArrayBlockingQueue<>(10);
+
+        // 生产者，开启线程
         Producer producer = new Producer(storage);
         Thread producerThread = new Thread(producer);
         producerThread.start();
 
+        // 消费者，开启线程，进行消费
         Consumer consumer = new Consumer(storage);
         while (consumer.needMoreNums()) {
             System.out.println(consumer.storage.take() + "被消费了");
@@ -32,6 +37,7 @@ public class WrongWayVolatileCantStop {
 }
 
 class Producer implements Runnable {
+
     volatile boolean canceled = false;
 
     private BlockingQueue<Integer> storage;
@@ -62,9 +68,10 @@ class Producer implements Runnable {
 }
 
 class Consumer {
-    BlockingQueue storage;
 
-    Consumer(BlockingQueue storage) {
+    BlockingQueue<Integer> storage;
+
+    Consumer(BlockingQueue<Integer> storage) {
         this.storage = storage;
     }
 
