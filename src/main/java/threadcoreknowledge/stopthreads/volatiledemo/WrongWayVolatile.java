@@ -7,6 +7,7 @@ package threadcoreknowledge.stopthreads.volatiledemo;
  * 2019/09/17 14:45
  */
 public class WrongWayVolatile implements Runnable {
+
     private volatile boolean canceled = false;
 
     @Override

@@ -10,15 +10,16 @@ import java.util.concurrent.BlockingQueue;
  * 2019/09/18 15:24
  */
 public class WrongWayVolatileFixed {
+
     public static void main(String[] args) throws InterruptedException {
         WrongWayVolatileFixed body = new WrongWayVolatileFixed();
 
         BlockingQueue<Integer> storage = new ArrayBlockingQueue<>(10);
-        Producer producer = body.new Producer(storage);
+        Producer producer = new Producer(storage);
         Thread producerThread = new Thread(producer);
         producerThread.start();
 
-        Consumer consumer = body.new Consumer(storage);
+        Consumer consumer = new Consumer(storage);
         while (consumer.needMoreNums()) {
             System.out.println(consumer.storage.take() + "被消费了");
             Thread.sleep(100);
@@ -27,7 +28,7 @@ public class WrongWayVolatileFixed {
         producerThread.interrupt();
     }
 
-    class Producer implements Runnable {
+    static class Producer implements Runnable {
 
         BlockingQueue<Integer> storage;
 
@@ -54,10 +55,10 @@ public class WrongWayVolatileFixed {
         }
     }
 
-    class Consumer {
-        BlockingQueue storage;
+    static class Consumer {
+        BlockingQueue<Integer> storage;
 
-        Consumer(BlockingQueue storage) {
+        Consumer(BlockingQueue<Integer> storage) {
             this.storage = storage;
         }
 
