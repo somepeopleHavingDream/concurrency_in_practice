@@ -7,6 +7,7 @@ package threadcoreknowledge.createthreads.wrongways;
  * 2019/09/14 16:16
  */
 public class AnonymousInnerClassDemo {
+
     public static void main(String[] args) {
         new Thread() {
             @Override

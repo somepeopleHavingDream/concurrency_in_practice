@@ -7,6 +7,7 @@ package threadcoreknowledge.createthreads;
  * 2019/09/14 15:52
  */
 public class BothRunnableThread {
+
     public static void main(String[] args) {
         new Thread(() -> System.out.println("我来自Runnable")) {
             @Override

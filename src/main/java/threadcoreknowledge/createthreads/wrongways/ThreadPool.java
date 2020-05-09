@@ -10,15 +10,19 @@ import java.util.concurrent.Executors;
  * 2019/09/14 16:06
  */
 public class ThreadPool {
+
     public static void main(String[] args) {
         ExecutorService executorService = Executors.newCachedThreadPool();
         for (int i = 0; i < 1000; i++) {
-            executorService.submit(new Task() {
-            });
+            executorService.submit(new Task());
         }
     }
 }
 
+/**
+ * @author yangxin
+ * 2020/05/09 21:34
+ */
 class Task implements Runnable{
 
     @Override

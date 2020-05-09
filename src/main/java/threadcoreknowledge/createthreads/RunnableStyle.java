@@ -7,6 +7,7 @@ package threadcoreknowledge.createthreads;
  * 2019/09/14 15:36
  */
 public class RunnableStyle implements Runnable{
+
     public void run() {
         System.out.println("用Runnable方式实现线程");
     }
