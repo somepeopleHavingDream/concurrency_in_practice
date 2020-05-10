@@ -4,6 +4,7 @@ package threadcoreknowledge.sixstates;
  * 展示BLOCKED、WAITING、TIMEDWAITING
  */
 public class BlockedWaitingTimedWaiting implements Runnable {
+
     @Override
     public void run() {
         syn();

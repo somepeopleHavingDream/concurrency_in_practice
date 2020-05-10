@@ -8,6 +8,7 @@ package threadcoreknowledge.sixstates;
  * 2019/09/19 11:00
  */
 public class NewRunnableTerminated implements Runnable {
+
     @Override
     public void run() {
         for (int i = 0; i < 1000; i++) {
