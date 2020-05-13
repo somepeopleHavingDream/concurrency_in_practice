@@ -9,8 +9,9 @@ import java.util.concurrent.atomic.AtomicInteger;
  * 2019/10/04 17:26
  */
 public class UseVolatile1 implements Runnable {
+
     private volatile boolean done = false;
-    private AtomicInteger realA = new AtomicInteger();
+    private final AtomicInteger realA = new AtomicInteger();
 
     @Override
     public void run() {

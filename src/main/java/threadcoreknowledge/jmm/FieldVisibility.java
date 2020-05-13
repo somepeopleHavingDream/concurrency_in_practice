@@ -7,6 +7,7 @@ package threadcoreknowledge.jmm;
  * 2019/10/04 15:38
  */
 public class FieldVisibility {
+
     private int a = 1;
     private int b = 2;
     private int c = 2;
