@@ -11,8 +11,10 @@ import java.util.concurrent.TimeUnit;
  * 2019/10/05 16:23
  */
 public class DiningPhilosophers {
+
     @AllArgsConstructor
     public static class Philosopher implements Runnable {
+
         private final Object leftChopstick;
         private final Object rightChopstick;
 
@@ -42,11 +44,16 @@ public class DiningPhilosophers {
     }
 
     public static void main(String[] args) {
+        // 五个哲学家
         Philosopher[] philosophers = new Philosopher[5];
+
+        // 五只筷子，注意：不是五双哦。
         Object[] chopsticks = new Object[philosophers.length];
         for (int i = 0; i < chopsticks.length; i++) {
             chopsticks[i] = new Object();
         }
+
+
         for (int i = 0; i < philosophers.length; i++) {
             Object leftChopstick = chopsticks[i];
             Object rightChopstick = chopsticks[(i + 1) % chopsticks.length];
