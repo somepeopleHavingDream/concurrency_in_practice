@@ -10,10 +10,11 @@ import lombok.ToString;
  * 2019/10/05 15:07
  */
 public class TransferMoney implements Runnable {
+
     private int flag = 1;
 
-    private static Account a = new Account(500);
-    private static Account b = new Account(500);
+    private static final Account a = new Account(500);
+    private static final Account b = new Account(500);
     private static final Object lock = new Object();
 
     @Override
