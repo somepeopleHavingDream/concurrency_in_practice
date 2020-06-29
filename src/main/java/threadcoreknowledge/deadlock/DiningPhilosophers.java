@@ -53,7 +53,6 @@ public class DiningPhilosophers {
             chopsticks[i] = new Object();
         }
 
-
         for (int i = 0; i < philosophers.length; i++) {
             Object leftChopstick = chopsticks[i];
             Object rightChopstick = chopsticks[(i + 1) % chopsticks.length];

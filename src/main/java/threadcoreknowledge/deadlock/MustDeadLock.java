@@ -9,6 +9,7 @@ import java.util.concurrent.TimeUnit;
  * 2019/10/05 14:51
  */
 public class MustDeadLock implements Runnable {
+
     private int flag = 1;
 
     private static final Object o1 = new Object();
