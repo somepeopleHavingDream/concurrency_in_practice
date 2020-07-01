@@ -9,6 +9,7 @@ import java.util.Random;
  * 2019/10/05 15:23
  */
 public class MultiTransferMoney {
+
     private static final int NUM_ACCOUNT = 500;
     private static final int NUM_MONEY = 1000;
     private static final int NUM_ITERATIONS = 1000000;
@@ -29,8 +30,8 @@ public class MultiTransferMoney {
 //            System.out.println(account);
 //        }
 
-
         class TransferThread extends Thread {
+
             @Override
             public void run() {
                 for (int i = 0; i < NUM_ITERATIONS; i++) {
