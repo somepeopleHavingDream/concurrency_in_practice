@@ -5,6 +5,12 @@ import java.util.concurrent.TimeUnit;
 /**
  * 必定发生死锁的情况
  *
+ * 死锁的4个必要条件
+ * 1. 互斥条件
+ * 2. 请求与保持条件
+ * 3. 不剥夺条件
+ * 4. 循环等待条件
+ *
  * @author yangxin
  * 2019/10/05 14:51
  */
