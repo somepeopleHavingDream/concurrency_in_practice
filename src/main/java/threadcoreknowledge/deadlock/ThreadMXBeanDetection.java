@@ -12,6 +12,7 @@ import java.util.concurrent.TimeUnit;
  * 2019/10/05 16:01
  */
 public class ThreadMXBeanDetection implements Runnable {
+
     private int flag = 1;
 
     private static final Object o1 = new Object();
