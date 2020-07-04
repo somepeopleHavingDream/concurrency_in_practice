@@ -45,47 +45,46 @@ public class TransferMoney implements Runnable {
                 }
                 from.balance -= amount;
                 to.balance += amount;
-//                to.balance = to.balance + amount;
                 System.out.println("成功转账" + amount + "元");
             }
         }
 
-//        int fromHash = System.identityHashCode(from);
-//        int toHash = System.identityHashCode(to);
-//        if (fromHash < toHash) {
-//            synchronized (from) {
-//                synchronized (to) {
-//                    new Helper().transfer();
-//                }
-//            }
-//        } else if (fromHash > toHash) {
+        int fromHash = System.identityHashCode(from);
+        int toHash = System.identityHashCode(to);
+        if (fromHash < toHash) {
+            synchronized (from) {
+                synchronized (to) {
+                    new Helper().transfer();
+                }
+            }
+        } else if (fromHash > toHash) {
+            synchronized (to) {
+                synchronized (from) {
+                    new Helper().transfer();
+                }
+            }
+        } else {
+            synchronized (lock) {
+                synchronized (to) {
+                    synchronized (from) {
+                        new Helper().transfer();
+                    }
+                }
+            }
+        }
+
+//        synchronized (from) {
+////            Thread.sleep(500);
 //            synchronized (to) {
-//                synchronized (from) {
-//                    new Helper().transfer();
+//                if (from.balance - amount < 0) {
+//                    System.out.println("余额不足，转账失败");
 //                }
-//            }
-//        } else {
-//            synchronized (lock) {
-//                synchronized (to) {
-//                    synchronized (from) {
-//                        new Helper().transfer();
-//                    }
-//                }
+//                from.balance -= amount;
+//                to.balance += amount;
+////                to.balance = to.balance + amount;
+//                System.out.println("成功转账" + amount + "元");
 //            }
 //        }
-
-        synchronized (from) {
-//            Thread.sleep(500);
-            synchronized (to) {
-                if (from.balance - amount < 0) {
-                    System.out.println("余额不足，转账失败");
-                }
-                from.balance -= amount;
-                to.balance += amount;
-//                to.balance = to.balance + amount;
-                System.out.println("成功转账" + amount + "元");
-            }
-        }
     }
 
     @AllArgsConstructor
