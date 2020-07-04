@@ -57,11 +57,12 @@ public class DiningPhilosophers {
             Object leftChopstick = chopsticks[i];
             Object rightChopstick = chopsticks[(i + 1) % chopsticks.length];
 
-            if (i == philosophers.length - 1) {
-                philosophers[i] = new Philosopher(rightChopstick, leftChopstick);
-            } else {
-                philosophers[i] = new Philosopher(leftChopstick, rightChopstick);
-            }
+            philosophers[i] = new Philosopher(leftChopstick, rightChopstick);
+//            if (i == philosophers.length - 1) {
+//                philosophers[i] = new Philosopher(rightChopstick, leftChopstick);
+//            } else {
+//                philosophers[i] = new Philosopher(leftChopstick, rightChopstick);
+//            }
             new Thread(philosophers[i], "哲学家" + (i + 1) + "号").start();
         }
     }
