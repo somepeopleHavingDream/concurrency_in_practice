@@ -18,6 +18,7 @@ public class DiningPhilosophers {
         private final Object leftChopstick;
         private final Object rightChopstick;
 
+        @SuppressWarnings("InfiniteLoopStatement")
         @Override
         public void run() {
             try {
