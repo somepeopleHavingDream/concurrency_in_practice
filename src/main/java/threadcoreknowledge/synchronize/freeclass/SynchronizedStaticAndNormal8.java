@@ -1,4 +1,4 @@
-package threadcoreknowledge.synchronize;
+package threadcoreknowledge.synchronize.freeclass;
 
 import java.util.concurrent.TimeUnit;
 
@@ -9,6 +9,7 @@ import java.util.concurrent.TimeUnit;
  * 2020/01/19 17:45
  */
 public class SynchronizedStaticAndNormal8 implements Runnable {
+
     private static final SynchronizedStaticAndNormal8 instance = new SynchronizedStaticAndNormal8();
 
     @Override
@@ -41,7 +42,8 @@ public class SynchronizedStaticAndNormal8 implements Runnable {
         Thread t2 = new Thread(instance);
         t1.start();
         t2.start();
-        while (t1.isAlive() || t2.isAlive()) {
+        while (true) {
+            if (!t1.isAlive() && !t2.isAlive()) break;
 
         }
         System.out.println("finished");

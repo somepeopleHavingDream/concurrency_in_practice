@@ -1,4 +1,4 @@
-package threadcoreknowledge.synchronize;
+package threadcoreknowledge.synchronize.freeclass;
 
 /**
  * 可重入粒度测试，调用父类的方法
@@ -7,12 +7,14 @@ package threadcoreknowledge.synchronize;
  * 2020/01/20 10:05
  */
 public class SynchronizedSuperClass12 {
+
     public synchronized void doSomething() {
         System.out.println("我是父类方法");
     }
 }
 
 class TestClass extends SynchronizedSuperClass12 {
+
     public synchronized void doSomething() {
         System.out.println("我是子类方法");
         super.doSomething();

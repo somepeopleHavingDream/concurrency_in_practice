@@ -1,4 +1,4 @@
-package threadcoreknowledge.synchronize;
+package threadcoreknowledge.synchronize.freeclass;
 
 /**
  * 可重入粒度测试：调用类内另外的方法
@@ -7,6 +7,7 @@ package threadcoreknowledge.synchronize;
  * 2020/01/20 09:59
  */
 public class SynchronizedOtherMethod11 {
+
     private synchronized void method1() {
         System.out.println("我是method1");
         method2();

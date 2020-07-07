@@ -1,4 +1,4 @@
-package threadcoreknowledge.synchronize;
+package threadcoreknowledge.synchronize.freeclass;
 
 /**
  * 可重入粒度测试：递归调用本方法
@@ -7,6 +7,7 @@ package threadcoreknowledge.synchronize;
  * 2020/01/20 09:56
  */
 public class SynchronizedRecursion10 {
+
     private int a = 0;
 
     public static void main(String[] args) {

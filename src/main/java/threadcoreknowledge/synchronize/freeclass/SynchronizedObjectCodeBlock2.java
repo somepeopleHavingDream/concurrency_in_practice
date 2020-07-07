@@ -1,4 +1,4 @@
-package threadcoreknowledge.synchronize;
+package threadcoreknowledge.synchronize.freeclass;
 
 import java.util.concurrent.TimeUnit;
 
@@ -9,7 +9,8 @@ import java.util.concurrent.TimeUnit;
  * 2020/01/19 11:21
  */
 public class SynchronizedObjectCodeBlock2 implements Runnable {
-    private static SynchronizedObjectCodeBlock2 instance = new SynchronizedObjectCodeBlock2();
+
+    private static final SynchronizedObjectCodeBlock2 instance = new SynchronizedObjectCodeBlock2();
 
     private final Object lock1 = new Object();
     private final Object lock2 = new Object();
@@ -42,8 +43,8 @@ public class SynchronizedObjectCodeBlock2 implements Runnable {
         Thread t2 = new Thread(instance);
         t1.start();
         t2.start();
-        while (t1.isAlive() || t2.isAlive()) {
-
+        while (true) {
+            if (!t1.isAlive() && !t2.isAlive()) break;
         }
         System.out.println("finished");
     }

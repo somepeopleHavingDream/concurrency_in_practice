@@ -1,4 +1,4 @@
-package threadcoreknowledge.synchronize;
+package threadcoreknowledge.synchronize.freeclass;
 
 /**
  * 消失的请求
@@ -7,9 +7,10 @@ package threadcoreknowledge.synchronize;
  * 2020/01/19 10:54
  */
 public class DisappearRequest1 implements Runnable {
+
     private static Integer count = 0;
 
-    private static DisappearRequest1 instance = new DisappearRequest1();
+    private static final DisappearRequest1 instance = new DisappearRequest1();
 
     public static void main(String[] args) throws InterruptedException {
         Thread t1 = new Thread(instance);

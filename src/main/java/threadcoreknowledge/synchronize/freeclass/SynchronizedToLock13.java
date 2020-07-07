@@ -1,4 +1,4 @@
-package threadcoreknowledge.synchronize;
+package threadcoreknowledge.synchronize.freeclass;
 
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
@@ -10,6 +10,7 @@ import java.util.concurrent.locks.ReentrantLock;
  * 2020/01/20 10:19
  */
 public class SynchronizedToLock13 {
+
     private final Lock lock = new ReentrantLock();
 
     private synchronized void method1() {

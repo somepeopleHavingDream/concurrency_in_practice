@@ -1,10 +1,11 @@
-package threadcoreknowledge.synchronize;
+package threadcoreknowledge.synchronize.freeclass;
 
 import java.util.concurrent.TimeUnit;
 
 public class SynchronizedClassClass5 implements Runnable {
-    private static SynchronizedClassClass5 instance1 = new SynchronizedClassClass5();
-    private static SynchronizedClassClass5 instance2 = new SynchronizedClassClass5();
+
+    private static final SynchronizedClassClass5 instance1 = new SynchronizedClassClass5();
+    private static final SynchronizedClassClass5 instance2 = new SynchronizedClassClass5();
 
     @Override
     public void run() {
@@ -28,7 +29,8 @@ public class SynchronizedClassClass5 implements Runnable {
         Thread t2 = new Thread(instance2);
         t1.start();
         t2.start();
-        while (t1.isAlive() || t2.isAlive()) {
+        while (true) {
+            if (!t1.isAlive() && !t2.isAlive()) break;
 
         }
         System.out.println("finished");

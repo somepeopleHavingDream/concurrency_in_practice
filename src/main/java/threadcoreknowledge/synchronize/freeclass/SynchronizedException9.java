@@ -1,4 +1,4 @@
-package threadcoreknowledge.synchronize;
+package threadcoreknowledge.synchronize.freeclass;
 
 import java.util.concurrent.TimeUnit;
 
@@ -10,6 +10,7 @@ import java.util.concurrent.TimeUnit;
  * 2020/01/19 17:51
  */
 public class SynchronizedException9 implements Runnable {
+
     private static final SynchronizedException9 instance = new SynchronizedException9();
 
     @Override
@@ -26,7 +27,7 @@ public class SynchronizedException9 implements Runnable {
     }
 
     public synchronized void method1() {
-        System.out.println("我是静态加锁的方法1。我叫：" + Thread.currentThread().getName());
+        System.out.println("我是非静态加锁的方法1。我叫：" + Thread.currentThread().getName());
         try {
             TimeUnit.MILLISECONDS.sleep(3000);
 //            throw new Exception();
@@ -48,7 +49,8 @@ public class SynchronizedException9 implements Runnable {
         Thread t2 = new Thread(instance);
         t1.start();
         t2.start();
-        while (t1.isAlive() || t2.isAlive()) {
+        while (true) {
+            if (!t1.isAlive() && !t2.isAlive()) break;
 
         }
         System.out.println("finished");

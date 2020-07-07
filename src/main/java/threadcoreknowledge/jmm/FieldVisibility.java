@@ -34,6 +34,7 @@ public class FieldVisibility {
         System.out.println("b = " + b + "; a = " + a);
     }
 
+    @SuppressWarnings("InfiniteLoopStatement")
     public static void main(String[] args) {
         while (true) {
             FieldVisibility test = new FieldVisibility();
