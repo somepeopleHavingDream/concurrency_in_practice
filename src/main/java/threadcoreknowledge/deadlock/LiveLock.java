@@ -13,9 +13,11 @@ import java.util.concurrent.TimeUnit;
  * 2019/10/05 17:18
  */
 public class LiveLock {
+
     @AllArgsConstructor
     @Data
     static class Spoon {
+
         private Diner owner;
 
         synchronized void use() {
@@ -24,7 +26,8 @@ public class LiveLock {
     }
 
     static class Diner {
-        private String name;
+
+        private final String name;
         private boolean isHungry;
 
         Diner(String name) {
@@ -44,6 +47,7 @@ public class LiveLock {
                 }
 
                 Random random = new Random();
+//                if (spouse.isHungry) {
                 if (spouse.isHungry && random.nextInt(10) < 9) {
                     System.out.println(name + ": 亲爱的" + spouse.name + "你先吃吧");
                     spoon.setOwner(spouse);
