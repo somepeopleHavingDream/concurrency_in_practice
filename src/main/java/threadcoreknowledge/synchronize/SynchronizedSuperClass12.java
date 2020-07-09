@@ -1,4 +1,4 @@
-package threadcoreknowledge.synchronize.freeclass;
+package threadcoreknowledge.synchronize;
 
 /**
  * 可重入粒度测试，调用父类的方法

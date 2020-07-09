@@ -1,4 +1,4 @@
-package threadcoreknowledge.synchronize.freeclass;
+package threadcoreknowledge.synchronize;
 
 /**
  * 消失的请求

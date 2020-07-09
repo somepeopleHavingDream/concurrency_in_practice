@@ -1,4 +1,4 @@
-package threadcoreknowledge.synchronize.freeclass;
+package threadcoreknowledge.synchronize;
 
 import java.util.concurrent.TimeUnit;
 

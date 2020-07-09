@@ -1,4 +1,4 @@
-package threadcoreknowledge.visibility;
+package baidu.visibility;
 
 /**
  * 可见性问题、排序问题（未考虑）

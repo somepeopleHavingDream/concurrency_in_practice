@@ -1,4 +1,4 @@
-package threadcoreknowledge.synchronize;
+package baidu.synchronize;
 
 /**
  * @author yangxin

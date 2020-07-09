@@ -1,4 +1,4 @@
-package threadcoreknowledge.synchronize.freeclass;
+package threadcoreknowledge.synchronize;
 
 /**
  * 反编译字节码

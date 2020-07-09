@@ -1,17 +1,16 @@
-package threadcoreknowledge.synchronize.freeclass;
+package threadcoreknowledge.synchronize;
 
 import java.util.concurrent.TimeUnit;
 
 /**
- * 同时访问同步方法和非同步方法
+ * 同步类方法和普通方法
  *
  * @author yangxin
- * 2020/01/19 17:32
+ * 2020/01/19 17:45
  */
-public class SynchronizedYesAndNo6 implements Runnable {
+public class SynchronizedStaticAndNormal8 implements Runnable {
 
-    private static final SynchronizedYesAndNo6 instance1 = new SynchronizedYesAndNo6();
-    private static final SynchronizedYesAndNo6 instance2 = new SynchronizedYesAndNo6();
+    private static final SynchronizedStaticAndNormal8 instance = new SynchronizedStaticAndNormal8();
 
     @Override
     public void run() {
@@ -26,21 +25,21 @@ public class SynchronizedYesAndNo6 implements Runnable {
         }
     }
 
-    public synchronized void method1() throws InterruptedException {
-        System.out.println("我是加锁的方法。我叫：" + Thread.currentThread().getName());
+    public synchronized static void method1() throws InterruptedException {
+        System.out.println("我是静态加锁的方法1。我叫：" + Thread.currentThread().getName());
         TimeUnit.MILLISECONDS.sleep(3000);
         System.out.println(Thread.currentThread().getName() + "运行结束！");
     }
 
-    public void method2() throws InterruptedException {
-        System.out.println("我是没加锁的方法。我叫：" + Thread.currentThread().getName());
+    public synchronized void method2() throws InterruptedException {
+        System.out.println("我是非静态加锁的方法2。我叫：" + Thread.currentThread().getName());
         TimeUnit.MILLISECONDS.sleep(3000);
         System.out.println(Thread.currentThread().getName() + "运行结束！");
     }
 
     public static void main(String[] args) {
-        Thread t1 = new Thread(instance1);
-        Thread t2 = new Thread(instance2);
+        Thread t1 = new Thread(instance);
+        Thread t2 = new Thread(instance);
         t1.start();
         t2.start();
         while (true) {

@@ -1,4 +1,4 @@
-package threadcoreknowledge.synchronize.freeclass;
+package threadcoreknowledge.synchronize;
 
 /**
  * 可重入粒度测试：递归调用本方法
