@@ -10,6 +10,7 @@ public class WrongWayVolatile implements Runnable {
 
     private volatile boolean canceled = false;
 
+    @SuppressWarnings("BusyWait")
     @Override
     public void run() {
         int num = 0;

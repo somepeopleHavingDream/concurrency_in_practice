@@ -11,6 +11,7 @@ import java.util.concurrent.BlockingQueue;
  */
 public class WrongWayVolatileFixed {
 
+    @SuppressWarnings({"InstantiationOfUtilityClass", "DuplicatedCode", "BusyWait"})
     public static void main(String[] args) throws InterruptedException {
         WrongWayVolatileFixed body = new WrongWayVolatileFixed();
 

@@ -13,6 +13,7 @@ import java.util.concurrent.BlockingQueue;
  */
 public class WrongWayVolatileCantStop {
 
+    @SuppressWarnings({"BusyWait", "DuplicatedCode"})
     public static void main(String[] args) throws InterruptedException {
         // 阻塞队列
         BlockingQueue<Integer> storage = new ArrayBlockingQueue<>(10);
@@ -46,7 +47,7 @@ class Producer implements Runnable {
 
     volatile boolean canceled = false;
 
-    private BlockingQueue<Integer> storage;
+    private final BlockingQueue<Integer> storage;
 
     Producer(BlockingQueue<Integer> storage) {
         this.storage = storage;
