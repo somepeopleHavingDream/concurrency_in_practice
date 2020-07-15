@@ -2,6 +2,9 @@ package threadcoreknowledge.sixstates;
 
 /**
  * 展示BLOCKED、WAITING、TIMEDWAITING
+ *
+ * @author yangxin
+ * 2020/07/17 15:03
  */
 public class BlockedWaitingTimedWaiting implements Runnable {
 
