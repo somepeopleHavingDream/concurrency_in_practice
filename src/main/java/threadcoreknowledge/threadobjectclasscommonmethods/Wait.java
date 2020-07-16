@@ -11,9 +11,11 @@ import java.util.concurrent.TimeUnit;
  * 2019/09/19 11:47
  */
 public class Wait {
+
     private static final Object object = new Object();
 
     static class Thread1 extends Thread {
+
         @Override
         public void run() {
             synchronized (object) {
@@ -29,6 +31,7 @@ public class Wait {
     }
 
     static class Thread2 extends Thread {
+
         @Override
         public void run() {
             synchronized (object) {

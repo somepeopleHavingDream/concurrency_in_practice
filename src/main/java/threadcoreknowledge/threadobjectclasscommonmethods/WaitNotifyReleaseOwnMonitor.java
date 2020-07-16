@@ -7,6 +7,7 @@ package threadcoreknowledge.threadobjectclasscommonmethods;
  * 2019/09/20 11:51
  */
 public class WaitNotifyReleaseOwnMonitor {
+
     private static final Object resourceA = new Object();
     private static final Object resourceB = new Object();
 

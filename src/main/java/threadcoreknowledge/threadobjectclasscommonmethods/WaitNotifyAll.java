@@ -7,6 +7,7 @@ package threadcoreknowledge.threadobjectclasscommonmethods;
  * 2019/09/20 11:31
  */
 public class WaitNotifyAll implements Runnable {
+
     private static final Object resourceA = new Object();
 
     @Override
