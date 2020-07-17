@@ -9,6 +9,8 @@ import java.util.concurrent.TimeUnit;
  * 2019/09/23 17:56
  */
 public class JoinPrinciple {
+
+    @SuppressWarnings("SynchronizationOnLocalVariableOrMethodParameter")
     public static void main(String[] args) throws InterruptedException {
         Thread thread1 = new Thread(() -> {
             try {
