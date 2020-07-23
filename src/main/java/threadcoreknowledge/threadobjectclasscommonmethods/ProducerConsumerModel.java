@@ -11,6 +11,7 @@ import java.util.Queue;
  * 2019/09/20 14:24
  */
 public class ProducerConsumerModel {
+
     public static void main(String[] args) {
         EventStorage eventStorage = new EventStorage();
         Producer producer = new Producer(eventStorage);
@@ -20,8 +21,13 @@ public class ProducerConsumerModel {
     }
 }
 
+/**
+ * @author yangxin
+ * 2020/07/23 20:36
+ */
 class Producer implements Runnable {
-    private EventStorage storage;
+
+    private final EventStorage storage;
 
     Producer(EventStorage storage) {
         this.storage = storage;
@@ -35,8 +41,13 @@ class Producer implements Runnable {
     }
 }
 
+/**
+ * @author yangxin
+ * 2020/07/23 20:45
+ */
 class Consumer implements Runnable {
-    private EventStorage storage;
+
+    private final EventStorage storage;
 
     Consumer(EventStorage storage) {
         this.storage = storage;
@@ -50,10 +61,14 @@ class Consumer implements Runnable {
     }
 }
 
+/**
+ * @author yangxin
+ * 2020/07/23 20:36
+ */
 class EventStorage {
-    private int maxSize;
-    private Queue<Date> storage;
-//    private LinkedList<Date> storage;
+
+    private final int maxSize;
+    private final Queue<Date> storage;
 
     EventStorage() {
         maxSize = 10;
