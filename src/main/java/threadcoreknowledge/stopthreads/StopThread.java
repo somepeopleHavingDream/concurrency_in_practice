@@ -8,6 +8,7 @@ package threadcoreknowledge.stopthreads;
  * 2019/09/18 14:34
  */
 public class StopThread implements Runnable {
+
     @Override
     public void run() {
         // 模拟指挥军队：一共有5个连队，每个连队10人，以连队为单位，发放武器弹药，叫到号的士兵前去领取
@@ -25,6 +26,7 @@ public class StopThread implements Runnable {
         }
     }
 
+    @SuppressWarnings("deprecation")
     public static void main(String[] args) {
         Thread thread = new Thread(new StopThread());
         thread.start();

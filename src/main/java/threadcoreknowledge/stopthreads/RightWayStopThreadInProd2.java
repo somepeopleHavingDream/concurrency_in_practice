@@ -9,6 +9,7 @@ package threadcoreknowledge.stopthreads;
  * 2019/09/18 14:01
  */
 public class RightWayStopThreadInProd2 implements Runnable {
+
     @Override
     public void run() {
         while (true) {

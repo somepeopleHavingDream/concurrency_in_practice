@@ -7,6 +7,8 @@ package threadcoreknowledge.stopthreads;
  * 2019/09/18 13:50
  */
 public class CantInterrupt {
+
+    @SuppressWarnings("BusyWait")
     public static void main(String[] args) throws InterruptedException {
         Runnable runnable = () -> {
             int num = 0;

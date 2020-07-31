@@ -8,6 +8,7 @@ package threadcoreknowledge.stopthreads;
  * 2019/09/17 14:52
  */
 public class RightWayStopThreadWithSleep {
+
     public static void main(String[] args) throws InterruptedException {
         Runnable runnable = () -> {
             int num = 0;

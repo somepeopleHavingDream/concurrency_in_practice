@@ -8,10 +8,13 @@ package threadcoreknowledge.stopthreads;
  * 2019/09/18 14:01
  */
 public class RightWayStopThreadInProd implements Runnable {
+
+    @SuppressWarnings("InfiniteLoopStatement")
     @Override
     public void run() {
         while (true) {
             System.out.println("go");
+
             try {
                 throwInMethod();
             } catch (InterruptedException e) {

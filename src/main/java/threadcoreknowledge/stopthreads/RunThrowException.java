@@ -7,6 +7,7 @@ package threadcoreknowledge.stopthreads;
  * 2019/09/18 14:10
  */
 public class RunThrowException {
+
     public void aVoid() throws Exception {
         throw new Exception();
     }
