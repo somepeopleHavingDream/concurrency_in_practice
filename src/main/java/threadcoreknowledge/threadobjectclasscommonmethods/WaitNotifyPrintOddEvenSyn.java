@@ -7,6 +7,7 @@ package threadcoreknowledge.threadobjectclasscommonmethods;
  * 2019/09/20 14:49
  */
 public class WaitNotifyPrintOddEvenSyn {
+
     private static int count;
     private static final Object lock = new Object();
 
