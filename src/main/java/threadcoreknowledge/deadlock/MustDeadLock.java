@@ -14,6 +14,7 @@ import java.util.concurrent.TimeUnit;
  * @author yangxin
  * 2019/10/05 14:51
  */
+@SuppressWarnings("DuplicatedCode")
 public class MustDeadLock implements Runnable {
 
     private int flag = 1;

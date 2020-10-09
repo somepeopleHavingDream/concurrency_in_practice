@@ -8,6 +8,7 @@ import java.util.concurrent.TimeUnit;
  * @author yangxin
  * 2020/01/19 17:45
  */
+@SuppressWarnings("DuplicatedCode")
 public class SynchronizedStaticAndNormal8 implements Runnable {
 
     private static final SynchronizedStaticAndNormal8 instance = new SynchronizedStaticAndNormal8();

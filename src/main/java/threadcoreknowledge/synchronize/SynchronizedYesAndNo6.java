@@ -8,6 +8,7 @@ import java.util.concurrent.TimeUnit;
  * @author yangxin
  * 2020/01/19 17:32
  */
+@SuppressWarnings("DuplicatedCode")
 public class SynchronizedYesAndNo6 implements Runnable {
 
     private static final SynchronizedYesAndNo6 instance1 = new SynchronizedYesAndNo6();

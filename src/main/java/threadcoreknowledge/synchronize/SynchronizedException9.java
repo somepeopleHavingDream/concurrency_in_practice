@@ -9,6 +9,7 @@ import java.util.concurrent.TimeUnit;
  * @author yangxin
  * 2020/01/19 17:51
  */
+@SuppressWarnings("DuplicatedCode")
 public class SynchronizedException9 implements Runnable {
 
     private static final SynchronizedException9 instance = new SynchronizedException9();

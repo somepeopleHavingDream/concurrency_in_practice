@@ -11,6 +11,7 @@ import java.util.concurrent.TimeUnit;
  * @author yangxin
  * 2019/10/05 16:01
  */
+@SuppressWarnings("DuplicatedCode")
 public class ThreadMXBeanDetection implements Runnable {
 
     private int flag = 1;

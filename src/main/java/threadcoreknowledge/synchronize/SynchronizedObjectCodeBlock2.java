@@ -8,6 +8,7 @@ import java.util.concurrent.TimeUnit;
  * @author yangxin
  * 2020/01/19 11:21
  */
+@SuppressWarnings("DuplicatedCode")
 public class SynchronizedObjectCodeBlock2 implements Runnable {
 
     private static final SynchronizedObjectCodeBlock2 instance = new SynchronizedObjectCodeBlock2();

@@ -8,6 +8,7 @@ import java.util.concurrent.TimeUnit;
  * @author yangxin
  * 2020/01/19
  */
+@SuppressWarnings("DuplicatedCode")
 public class SynchronizedDifferentMethod7 implements Runnable {
 
     private static final SynchronizedDifferentMethod7 instance = new SynchronizedDifferentMethod7();

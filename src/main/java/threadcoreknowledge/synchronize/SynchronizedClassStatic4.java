@@ -2,6 +2,7 @@ package threadcoreknowledge.synchronize;
 
 import java.util.concurrent.TimeUnit;
 
+@SuppressWarnings("DuplicatedCode")
 public class SynchronizedClassStatic4 implements Runnable {
 
     private static final SynchronizedClassStatic4 instance1 = new SynchronizedClassStatic4();

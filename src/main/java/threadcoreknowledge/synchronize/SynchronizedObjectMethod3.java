@@ -8,6 +8,7 @@ import java.util.concurrent.TimeUnit;
  * @author yangxin
  * 2020/01/19 11:21
  */
+@SuppressWarnings("DuplicatedCode")
 public class SynchronizedObjectMethod3 implements Runnable {
 
     private static final SynchronizedObjectMethod3 instance = new SynchronizedObjectMethod3();
