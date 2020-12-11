@@ -8,6 +8,7 @@ package threadcoreknowledge.threadobjectclasscommonmethods;
  * 2019/09/20 15:26
  */
 public class SleepDontReleaseMonitor implements Runnable {
+
     public static void main(String[] args) {
         SleepDontReleaseMonitor sleepDontReleaseMonitor = new SleepDontReleaseMonitor();
 

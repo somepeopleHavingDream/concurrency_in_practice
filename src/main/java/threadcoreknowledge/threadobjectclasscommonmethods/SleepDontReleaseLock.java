@@ -7,6 +7,7 @@ import java.util.concurrent.locks.ReentrantLock;
  * 演示sleep不释放lock(lock需要手动释放）
  */
 public class SleepDontReleaseLock implements Runnable {
+
     private static final Lock LOCK = new ReentrantLock();
 
     @Override
