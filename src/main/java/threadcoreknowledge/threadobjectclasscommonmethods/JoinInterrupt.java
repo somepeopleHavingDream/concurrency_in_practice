@@ -6,6 +6,7 @@ import java.util.concurrent.TimeUnit;
  * 演示join期间被中断的效果
  */
 public class JoinInterrupt {
+
     public static void main(String[] args) {
         Thread mainThread = Thread.currentThread();
         Thread thread1 = new Thread(() -> {

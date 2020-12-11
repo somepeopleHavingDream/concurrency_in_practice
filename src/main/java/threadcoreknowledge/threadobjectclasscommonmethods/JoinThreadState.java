@@ -10,6 +10,7 @@ import java.util.concurrent.TimeUnit;
  * 2019/09/23 17:30
  */
 public class JoinThreadState {
+
     public static void main(String[] args) throws InterruptedException {
         Thread mainThread = Thread.currentThread();
         Thread thread = new Thread(() -> {
