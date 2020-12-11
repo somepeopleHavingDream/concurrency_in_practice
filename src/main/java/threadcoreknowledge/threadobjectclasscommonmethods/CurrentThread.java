@@ -4,6 +4,7 @@ package threadcoreknowledge.threadobjectclasscommonmethods;
  * 演示打印main，Thread-0，Thread-1
  */
 public class CurrentThread implements Runnable {
+
     @Override
     public void run() {
         System.out.println(Thread.currentThread().getName());
