@@ -23,7 +23,7 @@ public class WrongWayVolatileCantStop {
         Thread producerThread = new Thread(producer);
         producerThread.start();
 
-        // 消费者，开启线程，进行消费
+        // 消费者，进行消费
         Consumer consumer = new Consumer(storage);
         while (consumer.needMoreNums()) {
             System.out.println(consumer.storage.take() + "被消费了");
@@ -34,6 +34,7 @@ public class WrongWayVolatileCantStop {
         // 一旦消费者不需要更多数据了，我们应该让生产者也停下来，但是实际情况
         producer.canceled = true;
         System.out.println(producer.canceled);
+        System.out.println("此时生产者线程的状态是：" + producerThread.getState());
     }
 }
 
@@ -59,7 +60,7 @@ class Producer implements Runnable {
         try {
             while (num <= 100000 && !canceled) {
                 if (num % 100 == 0) {
-                    // 入队之后马上就会释放锁，导致canceled值变更后程序无法察觉
+                    // 入队之后马上就会释放锁，陷入等待状态，导致canceled值变更后程序无法察觉
                     storage.put(num);
                     System.out.println(num + "是100的倍数，被放到仓库中了。");
                 }
