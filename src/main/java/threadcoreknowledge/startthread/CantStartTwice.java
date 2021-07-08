@@ -6,6 +6,7 @@ package threadcoreknowledge.startthread;
  * @author yangxin
  * 2019/09/17 14:09
  */
+@SuppressWarnings({"AlibabaAvoidManuallyCreateThread", "InstantiatingAThreadWithDefaultRunMethod"})
 public class CantStartTwice {
     public static void main(String[] args) {
         Thread thread = new Thread();

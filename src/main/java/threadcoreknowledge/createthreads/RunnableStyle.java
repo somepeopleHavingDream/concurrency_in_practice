@@ -6,8 +6,10 @@ package threadcoreknowledge.createthreads;
  * @author yangxin
  * 2019/09/14 15:36
  */
+@SuppressWarnings("AlibabaAvoidManuallyCreateThread")
 public class RunnableStyle implements Runnable{
 
+    @Override
     public void run() {
         System.out.println("用Runnable方式实现线程");
     }

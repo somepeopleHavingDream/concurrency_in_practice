@@ -6,6 +6,7 @@ package threadcoreknowledge.startthread;
  * @author yangxin
  * 2019/09/17 13:58
  */
+@SuppressWarnings("AlibabaAvoidManuallyCreateThread")
 public class StartAndRunMethod {
     public static void main(String[] args) {
         Runnable runnable = () -> System.out.println(Thread.currentThread().getName());

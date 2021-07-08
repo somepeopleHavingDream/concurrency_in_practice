@@ -6,6 +6,7 @@ package threadcoreknowledge.createthreads.wrongways;
  * @author yangxin
  * 2019/09/14 16:16
  */
+@SuppressWarnings({"Convert2Lambda", "AnonymousHasLambdaAlternative"})
 public class AnonymousInnerClassDemo {
 
     public static void main(String[] args) {

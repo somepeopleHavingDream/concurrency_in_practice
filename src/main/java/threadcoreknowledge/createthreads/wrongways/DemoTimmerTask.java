@@ -9,6 +9,7 @@ import java.util.TimerTask;
  * @author yangxin
  * 2019/09/14 16:12
  */
+@SuppressWarnings("AlibabaAvoidUseTimer")
 public class DemoTimmerTask {
 
     public static void main(String[] args) {
