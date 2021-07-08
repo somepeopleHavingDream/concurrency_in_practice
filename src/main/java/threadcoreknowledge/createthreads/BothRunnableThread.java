@@ -6,6 +6,7 @@ package threadcoreknowledge.createthreads;
  * @author yangxin
  * 2019/09/14 15:52
  */
+@SuppressWarnings("AlibabaAvoidManuallyCreateThread")
 public class BothRunnableThread {
 
     public static void main(String[] args) {
