@@ -9,6 +9,7 @@ import java.util.concurrent.BlockingQueue;
  * @author yangxin
  * 2019/09/18 15:24
  */
+@SuppressWarnings("AlibabaAvoidManuallyCreateThread")
 public class WrongWayVolatileFixed {
 
     @SuppressWarnings({"InstantiationOfUtilityClass", "DuplicatedCode", "BusyWait"})
@@ -29,6 +30,7 @@ public class WrongWayVolatileFixed {
         producerThread.interrupt();
     }
 
+    @SuppressWarnings("AlibabaUndefineMagicConstant")
     static class Producer implements Runnable {
 
         BlockingQueue<Integer> storage;

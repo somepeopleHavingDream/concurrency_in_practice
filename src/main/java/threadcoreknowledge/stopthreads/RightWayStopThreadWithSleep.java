@@ -7,6 +7,7 @@ package threadcoreknowledge.stopthreads;
  * @author yangxin
  * 2019/09/17 14:52
  */
+@SuppressWarnings({"AlibabaUndefineMagicConstant", "AlibabaAvoidManuallyCreateThread"})
 public class RightWayStopThreadWithSleep {
 
     public static void main(String[] args) throws InterruptedException {

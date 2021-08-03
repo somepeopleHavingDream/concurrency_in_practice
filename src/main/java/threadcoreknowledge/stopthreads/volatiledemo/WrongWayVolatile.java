@@ -6,6 +6,7 @@ package threadcoreknowledge.stopthreads.volatiledemo;
  * @author yangxin
  * 2019/09/17 14:45
  */
+@SuppressWarnings({"AlibabaUndefineMagicConstant", "AlibabaAvoidManuallyCreateThread"})
 public class WrongWayVolatile implements Runnable {
 
     private volatile boolean canceled = false;

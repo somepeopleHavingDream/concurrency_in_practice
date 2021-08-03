@@ -6,6 +6,7 @@ package threadcoreknowledge.stopthreads;
  * @author yangxin
  * 2019/09/18 13:50
  */
+@SuppressWarnings({"AlibabaUndefineMagicConstant", "AlibabaAvoidManuallyCreateThread"})
 public class CantInterrupt {
 
     @SuppressWarnings("BusyWait")

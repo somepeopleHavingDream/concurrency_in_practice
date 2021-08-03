@@ -7,6 +7,7 @@ package threadcoreknowledge.stopthreads;
  * @author yangxin
  * 2019/09/18 14:34
  */
+@SuppressWarnings({"AlibabaUndefineMagicConstant", "AlibabaAvoidManuallyCreateThread"})
 public class StopThread implements Runnable {
 
     @Override

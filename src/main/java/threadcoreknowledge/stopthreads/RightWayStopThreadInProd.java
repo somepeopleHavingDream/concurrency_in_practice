@@ -7,6 +7,7 @@ package threadcoreknowledge.stopthreads;
  * @author yangxin
  * 2019/09/18 14:01
  */
+@SuppressWarnings("AlibabaAvoidManuallyCreateThread")
 public class RightWayStopThreadInProd implements Runnable {
 
     @SuppressWarnings("InfiniteLoopStatement")

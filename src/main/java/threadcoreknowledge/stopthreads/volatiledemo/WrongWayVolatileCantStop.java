@@ -11,6 +11,7 @@ import java.util.concurrent.BlockingQueue;
  * @author yangxin
  * 2019/09/18 14:57
  */
+@SuppressWarnings("AlibabaAvoidManuallyCreateThread")
 public class WrongWayVolatileCantStop {
 
     @SuppressWarnings({"BusyWait", "DuplicatedCode"})
@@ -44,6 +45,7 @@ public class WrongWayVolatileCantStop {
  * @author yangxin
  * 2020/01/21 17:17
  */
+@SuppressWarnings("AlibabaUndefineMagicConstant")
 class Producer implements Runnable {
 
     volatile boolean canceled = false;

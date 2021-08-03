@@ -6,6 +6,7 @@ package threadcoreknowledge.stopthreads;
  * @author yangxin
  * 2019/09/18 14:10
  */
+@SuppressWarnings("AlibabaAvoidManuallyCreateThread")
 public class RunThrowException {
 
     public void aVoid() throws Exception {
