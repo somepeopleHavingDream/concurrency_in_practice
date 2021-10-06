@@ -6,18 +6,19 @@ package threadcoreknowledge.threadobjectclasscommonmethods;
  * @author yangxin
  * 2019/09/20 11:31
  */
+@SuppressWarnings("AlibabaAvoidManuallyCreateThread")
 public class WaitNotifyAll implements Runnable {
 
-    private static final Object resourceA = new Object();
+    private static final Object RESOURCE_A = new Object();
 
     @Override
     public void run() {
-        synchronized (resourceA) {
+        synchronized (RESOURCE_A) {
             System.out.println(Thread.currentThread().getName() + " got resourceA lock");
 
             try {
                 System.out.println(Thread.currentThread().getName() + " waits to start");
-                resourceA.wait();
+                RESOURCE_A.wait();
                 System.out.println(Thread.currentThread().getName() + "'s waiting to end");
             } catch (InterruptedException e) {
                 e.printStackTrace();
@@ -30,8 +31,8 @@ public class WaitNotifyAll implements Runnable {
         Thread threadA = new Thread(r);
         Thread threadB = new Thread(r);
         Thread threadC = new Thread(() -> {
-            synchronized (resourceA) {
-                resourceA.notifyAll();
+            synchronized (RESOURCE_A) {
+                RESOURCE_A.notifyAll();
                 System.out.println("ThreadC notified.");
             }
         });
