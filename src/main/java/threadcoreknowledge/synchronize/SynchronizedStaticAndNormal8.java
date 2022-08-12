@@ -8,15 +8,15 @@ import java.util.concurrent.TimeUnit;
  * @author yangxin
  * 2020/01/19 17:45
  */
-@SuppressWarnings("DuplicatedCode")
+@SuppressWarnings({"DuplicatedCode", "AlibabaUndefineMagicConstant", "AlibabaAvoidManuallyCreateThread"})
 public class SynchronizedStaticAndNormal8 implements Runnable {
 
-    private static final SynchronizedStaticAndNormal8 instance = new SynchronizedStaticAndNormal8();
+    private static final SynchronizedStaticAndNormal8 INSTANCE = new SynchronizedStaticAndNormal8();
 
     @Override
     public void run() {
         try {
-            if (Thread.currentThread().getName().equals("Thread-0")) {
+            if ("Thread-0".equals(Thread.currentThread().getName())) {
                 method1();
             } else {
                 method2();
@@ -39,12 +39,14 @@ public class SynchronizedStaticAndNormal8 implements Runnable {
     }
 
     public static void main(String[] args) {
-        Thread t1 = new Thread(instance);
-        Thread t2 = new Thread(instance);
+        Thread t1 = new Thread(INSTANCE);
+        Thread t2 = new Thread(INSTANCE);
         t1.start();
         t2.start();
         while (true) {
-            if (!t1.isAlive() && !t2.isAlive()) break;
+            if (!t1.isAlive() && !t2.isAlive()) {
+                break;
+            }
 
         }
         System.out.println("finished");

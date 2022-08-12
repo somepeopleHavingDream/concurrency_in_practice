@@ -7,6 +7,7 @@ package threadcoreknowledge.threadobjectclasscommonmethods;
  * @author yangxin
  * 2019/09/20 15:26
  */
+@SuppressWarnings("AlibabaAvoidManuallyCreateThread")
 public class SleepDontReleaseMonitor implements Runnable {
 
     public static void main(String[] args) {

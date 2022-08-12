@@ -8,6 +8,7 @@ import java.util.concurrent.TimeUnit;
  * @author yangxin
  * 2019/10/03 16:55
  */
+@SuppressWarnings({"AlibabaUndefineMagicConstant", "AlibabaAvoidManuallyCreateThread", "unused"})
 public class Observer {
     private int count;
 
@@ -51,6 +52,7 @@ public class Observer {
         }
     }
 
+    @SuppressWarnings("AlibabaAbstractMethodOrInterfaceMethodMustUseJavadoc")
     interface EventListener {
         void onEvent(Event e);
     }

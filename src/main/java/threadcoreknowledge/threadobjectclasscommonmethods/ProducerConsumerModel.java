@@ -10,6 +10,7 @@ import java.util.Queue;
  * @author yangxin
  * 2019/09/20 14:24
  */
+@SuppressWarnings("AlibabaAvoidManuallyCreateThread")
 public class ProducerConsumerModel {
 
     public static void main(String[] args) {
@@ -25,6 +26,7 @@ public class ProducerConsumerModel {
  * @author yangxin
  * 2020/07/23 20:36
  */
+@SuppressWarnings("AlibabaUndefineMagicConstant")
 class Producer implements Runnable {
 
     private final EventStorage storage;
@@ -45,6 +47,7 @@ class Producer implements Runnable {
  * @author yangxin
  * 2020/07/23 20:45
  */
+@SuppressWarnings("AlibabaUndefineMagicConstant")
 class Consumer implements Runnable {
 
     private final EventStorage storage;

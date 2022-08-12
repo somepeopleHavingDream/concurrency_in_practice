@@ -6,6 +6,7 @@ package threadcoreknowledge.cas;
  * @author yangxin
  * 2019/12/26 11:07
  */
+@SuppressWarnings({"SameParameterValue", "AlibabaAvoidManuallyCreateThread", "UnusedReturnValue"})
 public class TwoThreadsCompetition implements Runnable {
     private volatile int value;
 

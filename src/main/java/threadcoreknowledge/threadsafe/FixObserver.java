@@ -8,9 +8,10 @@ import java.util.concurrent.TimeUnit;
  * @author yangxin
  * 2019/10/03 17:23
  */
+@SuppressWarnings({"AlibabaAvoidManuallyCreateThread", "unused", "AlibabaUndefineMagicConstant"})
 public class FixObserver {
     private int count;
-    private EventListener listener;
+    private final EventListener listener;
 
     private FixObserver(MySource source) {
         listener = e -> System.out.println("\n我得到的数字是" + count);
@@ -41,6 +42,7 @@ public class FixObserver {
         Observer observer = new Observer(mySource);
     }
 
+    @SuppressWarnings("unused")
     static class MySource {
         private EventListener listener;
 
@@ -58,9 +60,11 @@ public class FixObserver {
         }
     }
 
+    @SuppressWarnings("AlibabaAbstractMethodOrInterfaceMethodMustUseJavadoc")
     interface EventListener {
         void onEvent(Observer.Event e);
     }
 
+    @SuppressWarnings("unused")
     interface Event {}
 }

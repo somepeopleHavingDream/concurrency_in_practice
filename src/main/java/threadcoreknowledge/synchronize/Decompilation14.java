@@ -6,6 +6,7 @@ package threadcoreknowledge.synchronize;
  * @author yangxin
  * 2020/01/20 10:27
  */
+@SuppressWarnings({"unused", "SpellCheckingInspection", "EmptySynchronizedStatement"})
 public class Decompilation14 {
 
     private final Object object = new Object();

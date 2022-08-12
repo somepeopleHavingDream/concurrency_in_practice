@@ -11,6 +11,7 @@ import java.util.logging.Logger;
  * @author yangxin
  * 2019/09/25 15:21
  */
+@SuppressWarnings("AlibabaRemoveCommentedCode")
 @AllArgsConstructor
 public class MyUncaughtExceptionHandler implements Thread.UncaughtExceptionHandler {
     private String name;

@@ -8,6 +8,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  * @author yangxin
  * 2019/10/04 17:26
  */
+@SuppressWarnings({"AlibabaAvoidManuallyCreateThread", "AlibabaUndefineMagicConstant"})
 public class UseVolatile1 implements Runnable {
 
     private volatile boolean done = false;
@@ -21,6 +22,7 @@ public class UseVolatile1 implements Runnable {
         }
     }
 
+    @SuppressWarnings("DuplicatedCode")
     public static void main(String[] args) throws InterruptedException {
         UseVolatile1 r = new UseVolatile1();
         Thread thread1 = new Thread(r);

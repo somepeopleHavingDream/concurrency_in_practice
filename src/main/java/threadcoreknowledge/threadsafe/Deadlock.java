@@ -8,36 +8,37 @@ import java.util.concurrent.TimeUnit;
  * @author yangxin
  * 2019/10/03 16:16
  */
+@SuppressWarnings("AlibabaAvoidManuallyCreateThread")
 public class Deadlock implements Runnable {
     private int flag = 1;
-    private static final Object o1 = new Object();
-    private static final Object o2 = new Object();
+    private static final Object O1 = new Object();
+    private static final Object O2 = new Object();
 
     @Override
     public void run() {
         System.out.println("flag = " + flag);
         if (flag == 1) {
-            synchronized (o1) {
+            synchronized (O1) {
                 try {
                     TimeUnit.MILLISECONDS.sleep(500);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
 
-                synchronized (o2) {
+                synchronized (O2) {
                     System.out.println("1");
                 }
             }
         }
 
         if (flag == 0) {
-            synchronized (o2) {
+            synchronized (O2) {
                 try {
                     TimeUnit.MILLISECONDS.sleep(5);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-                synchronized (o1) {
+                synchronized (O1) {
                     System.out.println("0");
                 }
             }

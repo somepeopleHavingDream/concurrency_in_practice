@@ -7,6 +7,7 @@ package threadcoreknowledge.sixstates;
  * @author yangxin
  * 2019/09/19 11:00
  */
+@SuppressWarnings({"AlibabaAvoidManuallyCreateThread", "AlibabaUndefineMagicConstant"})
 public class NewRunnableTerminated implements Runnable {
 
     @Override

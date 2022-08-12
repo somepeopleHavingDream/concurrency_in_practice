@@ -6,6 +6,7 @@ package threadcoreknowledge.jmm;
  * @author yangxin
  * 2019/10/04 15:38
  */
+@SuppressWarnings({"AlibabaAvoidManuallyCreateThread", "unused"})
 public class FieldVisibility {
 
     private int a = 1;

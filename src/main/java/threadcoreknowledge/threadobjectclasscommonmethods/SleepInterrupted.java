@@ -11,6 +11,7 @@ import java.util.concurrent.TimeUnit;
  * @author yangxin
  * 2019/09/23 17:10
  */
+@SuppressWarnings({"AlibabaAvoidManuallyCreateThread", "AlibabaUndefineMagicConstant"})
 public class SleepInterrupted implements Runnable {
 
     @Override

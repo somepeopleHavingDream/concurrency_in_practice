@@ -2,11 +2,11 @@ package threadcoreknowledge.synchronize;
 
 import java.util.concurrent.TimeUnit;
 
-@SuppressWarnings("DuplicatedCode")
+@SuppressWarnings({"DuplicatedCode", "AlibabaClassMustHaveAuthor", "AlibabaAvoidManuallyCreateThread"})
 public class SynchronizedClassStatic4 implements Runnable {
 
-    private static final SynchronizedClassStatic4 instance1 = new SynchronizedClassStatic4();
-    private static final SynchronizedClassStatic4 instance2 = new SynchronizedClassStatic4();
+    private static final SynchronizedClassStatic4 INSTANCE_1 = new SynchronizedClassStatic4();
+    private static final SynchronizedClassStatic4 INSTANCE_2 = new SynchronizedClassStatic4();
 
     @Override
     public void run() {
@@ -18,12 +18,14 @@ public class SynchronizedClassStatic4 implements Runnable {
     }
 
     public static void main(String[] args) {
-        Thread t1 = new Thread(instance1);
-        Thread t2 = new Thread(instance2);
+        Thread t1 = new Thread(INSTANCE_1);
+        Thread t2 = new Thread(INSTANCE_2);
         t1.start();
         t2.start();
         while (true) {
-            if (!t1.isAlive() && !t2.isAlive()) break;
+            if (!t1.isAlive() && !t2.isAlive()) {
+                break;
+            }
 
         }
         System.out.println("finished");

@@ -8,10 +8,10 @@ import java.util.concurrent.TimeUnit;
  * @author yangxin
  * 2020/01/19 11:21
  */
-@SuppressWarnings("DuplicatedCode")
+@SuppressWarnings({"DuplicatedCode", "AlibabaAvoidManuallyCreateThread"})
 public class SynchronizedObjectCodeBlock2 implements Runnable {
 
-    private static final SynchronizedObjectCodeBlock2 instance = new SynchronizedObjectCodeBlock2();
+    private static final SynchronizedObjectCodeBlock2 INSTANCE = new SynchronizedObjectCodeBlock2();
 
     private final Object lock1 = new Object();
     private final Object lock2 = new Object();
@@ -40,12 +40,14 @@ public class SynchronizedObjectCodeBlock2 implements Runnable {
     }
 
     public static void main(String[] args) {
-        Thread t1 = new Thread(instance);
-        Thread t2 = new Thread(instance);
+        Thread t1 = new Thread(INSTANCE);
+        Thread t2 = new Thread(INSTANCE);
         t1.start();
         t2.start();
         while (true) {
-            if (!t1.isAlive() && !t2.isAlive()) break;
+            if (!t1.isAlive() && !t2.isAlive()) {
+                break;
+            }
         }
         System.out.println("finished");
     }

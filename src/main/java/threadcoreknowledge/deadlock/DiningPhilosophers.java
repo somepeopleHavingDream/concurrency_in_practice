@@ -10,8 +10,10 @@ import java.util.concurrent.TimeUnit;
  * @author yangxin
  * 2019/10/05 16:23
  */
+@SuppressWarnings("AlibabaAvoidManuallyCreateThread")
 public class DiningPhilosophers {
 
+    @SuppressWarnings("ConstantConditions")
     @AllArgsConstructor
     public static class Philosopher implements Runnable {
 

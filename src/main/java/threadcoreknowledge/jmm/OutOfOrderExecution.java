@@ -9,6 +9,7 @@ import java.util.concurrent.CountDownLatch;
  * @author yangxin
  * 2019/10/04 15:03
  */
+@SuppressWarnings({"AlibabaCommentsMustBeJavadocFormat", "AlibabaAvoidManuallyCreateThread"})
 public class OutOfOrderExecution {
 
     private static int x = 0, y = 0;

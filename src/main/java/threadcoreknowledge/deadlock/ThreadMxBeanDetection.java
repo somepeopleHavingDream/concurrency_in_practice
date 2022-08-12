@@ -11,37 +11,37 @@ import java.util.concurrent.TimeUnit;
  * @author yangxin
  * 2019/10/05 16:01
  */
-@SuppressWarnings("DuplicatedCode")
-public class ThreadMXBeanDetection implements Runnable {
+@SuppressWarnings({"DuplicatedCode", "AlibabaAvoidManuallyCreateThread"})
+public class ThreadMxBeanDetection implements Runnable {
 
     private int flag = 1;
 
-    private static final Object o1 = new Object();
-    private static final Object o2 = new Object();
+    private static final Object O1 = new Object();
+    private static final Object O2 = new Object();
 
     @Override
     public void run() {
         System.out.println("flag = " + flag);
         if (flag == 1) {
-            synchronized (o1) {
+            synchronized (O1) {
                 try {
                     TimeUnit.MILLISECONDS.sleep(500);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-                synchronized (o2) {
+                synchronized (O2) {
                     System.out.println("线程1成功拿到两把锁");
                 }
             }
         }
         if (flag == 0) {
-            synchronized (o2) {
+            synchronized (O2) {
                 try {
                     TimeUnit.MILLISECONDS.sleep(500);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-                synchronized (o1) {
+                synchronized (O1) {
                     System.out.println("线程2成功拿到两把锁");
                 }
             }
@@ -49,8 +49,8 @@ public class ThreadMXBeanDetection implements Runnable {
     }
 
     public static void main(String[] args) throws InterruptedException {
-        ThreadMXBeanDetection r1 = new ThreadMXBeanDetection();
-        ThreadMXBeanDetection r2 = new ThreadMXBeanDetection();
+        ThreadMxBeanDetection r1 = new ThreadMxBeanDetection();
+        ThreadMxBeanDetection r2 = new ThreadMxBeanDetection();
         r1.flag = 1;
         r2.flag = 0;
         Thread t1 = new Thread(r1);
@@ -59,10 +59,10 @@ public class ThreadMXBeanDetection implements Runnable {
         t2.start();
 
         TimeUnit.MILLISECONDS.sleep(1000);
-        ThreadMXBean threadMXBean = ManagementFactory.getThreadMXBean();
-        long[] deadlockedThreads = threadMXBean.findDeadlockedThreads();
+        ThreadMXBean threadMxBean = ManagementFactory.getThreadMXBean();
+        long[] deadlockedThreads = threadMxBean.findDeadlockedThreads();
         for (long deadlockedThread : deadlockedThreads) {
-            ThreadInfo threadInfo = threadMXBean.getThreadInfo(deadlockedThread);
+            ThreadInfo threadInfo = threadMxBean.getThreadInfo(deadlockedThread);
             System.out.println("发现死锁" + threadInfo.getThreadName());
         }
     }

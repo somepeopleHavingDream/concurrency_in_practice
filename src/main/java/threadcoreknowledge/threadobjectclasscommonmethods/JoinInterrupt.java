@@ -5,6 +5,7 @@ import java.util.concurrent.TimeUnit;
 /**
  * 演示join期间被中断的效果
  */
+@SuppressWarnings({"AlibabaAvoidManuallyCreateThread", "AlibabaClassMustHaveAuthor"})
 public class JoinInterrupt {
 
     public static void main(String[] args) {

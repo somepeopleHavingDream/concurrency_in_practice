@@ -6,6 +6,7 @@ package threadcoreknowledge.sixstates;
  * @author yangxin
  * 2020/07/17 15:03
  */
+@SuppressWarnings("AlibabaAvoidManuallyCreateThread")
 public class BlockedWaitingTimedWaiting implements Runnable {
 
     @Override

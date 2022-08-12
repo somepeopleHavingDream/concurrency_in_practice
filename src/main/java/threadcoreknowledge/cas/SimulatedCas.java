@@ -6,7 +6,8 @@ package threadcoreknowledge.cas;
  * @author yangxin
  * 2019/12/26 11:01
  */
-public class SimulatedCAS {
+@SuppressWarnings("unused")
+public class SimulatedCas {
     private volatile int value;
 
     public synchronized int compareAndSwap(int expectedValue, int newValue) {

@@ -9,23 +9,24 @@ import java.util.Map;
  * @author yangxin
  * 2019/10/03
  */
+@SuppressWarnings({"AlibabaRemoveCommentedCode", "CommentedOutCode", "unused"})
 public class PublishOvershot {
-    private Map<String, String> states;
+    private final Map<String, String> STATES;
 
     private PublishOvershot() {
-        states = new HashMap<>();
-        states.put("1", "周一");
-        states.put("2", "周二");
-        states.put("3", "周三");
-        states.put("4", "周四");
+        STATES = new HashMap<>();
+        STATES.put("1", "周一");
+        STATES.put("2", "周二");
+        STATES.put("3", "周三");
+        STATES.put("4", "周四");
     }
 
     private Map<String, String> getStates() {
-        return states;
+        return STATES;
     }
 
     private Map<String, String> getStatesImproved() {
-        return new HashMap<>(states);
+        return new HashMap<>(STATES);
     }
 
     public static void main(String[] args) {

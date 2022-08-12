@@ -6,15 +6,16 @@ package threadcoreknowledge.synchronize;
  * @author yangxin
  * 2020/01/19 10:54
  */
+@SuppressWarnings({"AlibabaAvoidManuallyCreateThread", "AlibabaUndefineMagicConstant"})
 public class DisappearRequest1 implements Runnable {
 
     private static Integer count = 0;
 
-    private static final DisappearRequest1 instance = new DisappearRequest1();
+    private static final DisappearRequest1 INSTANCE = new DisappearRequest1();
 
     public static void main(String[] args) throws InterruptedException {
-        Thread t1 = new Thread(instance);
-        Thread t2 = new Thread(instance);
+        Thread t1 = new Thread(INSTANCE);
+        Thread t2 = new Thread(INSTANCE);
         t1.start();
         t2.start();
         t1.join();

@@ -4,6 +4,7 @@ package threadcoreknowledge.sixstates;
  * @author yangxin
  * 2020/08/07 17:44
  */
+@SuppressWarnings("AlibabaAvoidManuallyCreateThread")
 public class ToGetLockAfterNotify implements Runnable {
 
     private final Object lock1 = new Object();

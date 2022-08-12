@@ -9,6 +9,7 @@ import java.util.concurrent.TimeUnit;
  * @author yangxin
  * 2019/09/23 17:30
  */
+@SuppressWarnings("AlibabaAvoidManuallyCreateThread")
 public class JoinThreadState {
 
     public static void main(String[] args) throws InterruptedException {

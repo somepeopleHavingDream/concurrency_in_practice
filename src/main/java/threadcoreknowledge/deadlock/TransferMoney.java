@@ -9,26 +9,27 @@ import lombok.ToString;
  * @author yangxin
  * 2019/10/05 15:07
  */
+@SuppressWarnings({"AlibabaAvoidManuallyCreateThread", "CommentedOutCode"})
 public class TransferMoney implements Runnable {
 
     private int flag = 1;
 
-    private static final Account a = new Account(500);
-    private static final Account b = new Account(500);
-    private static final Object lock = new Object();
+    private static final Account A = new Account(500);
+    private static final Account B = new Account(500);
+    private static final Object LOCK = new Object();
 
     @Override
     public void run() {
         if (flag == 1) {
             try {
-                transferMoney(a, b, 200);
+                transferMoney(A, B, 200);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
         }
         if (flag == 0) {
             try {
-                transferMoney(b, a, 200);
+                transferMoney(B, A, 200);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -64,7 +65,7 @@ public class TransferMoney implements Runnable {
                 }
             }
         } else {
-            synchronized (lock) {
+            synchronized (LOCK) {
                 synchronized (to) {
                     synchronized (from) {
                         new Helper().transfer();
@@ -104,7 +105,7 @@ public class TransferMoney implements Runnable {
         t2.start();
         t1.join();
         t2.join();
-        System.out.println("a的余额" + a.balance);
-        System.out.println("b的余额" + b.balance);
+        System.out.println("a的余额" + A.balance);
+        System.out.println("b的余额" + B.balance);
     }
 }

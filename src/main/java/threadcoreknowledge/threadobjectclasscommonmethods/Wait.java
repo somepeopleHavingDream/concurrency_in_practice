@@ -10,6 +10,7 @@ import java.util.concurrent.TimeUnit;
  * @author yangxin
  * 2019/09/19 11:47
  */
+@SuppressWarnings("AlibabaRemoveCommentedCode")
 public class Wait {
 
     private static final Object OBJECT = new Object();

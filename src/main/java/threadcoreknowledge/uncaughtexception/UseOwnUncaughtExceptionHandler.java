@@ -6,6 +6,7 @@ package threadcoreknowledge.uncaughtexception;
  * @author yangxin
  * 2019/09/25 15:33
  */
+@SuppressWarnings("AlibabaAvoidManuallyCreateThread")
 public class UseOwnUncaughtExceptionHandler implements Runnable {
     @Override
     public void run() {

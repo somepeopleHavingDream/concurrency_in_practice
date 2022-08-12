@@ -12,6 +12,7 @@ import java.util.concurrent.TimeUnit;
  * @author yangxin
  * 2019/10/05 17:18
  */
+@SuppressWarnings("AlibabaAvoidManuallyCreateThread")
 public class LiveLock {
 
     @AllArgsConstructor

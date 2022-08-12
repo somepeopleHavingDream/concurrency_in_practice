@@ -8,6 +8,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  * @author yangxin
  * 2019/10/04 17:18
  */
+@SuppressWarnings({"NonAtomicOperationOnVolatileField", "AlibabaUndefineMagicConstant", "DuplicatedCode", "AlibabaAvoidManuallyCreateThread"})
 public class NoVolatile2 implements Runnable {
 
     private volatile boolean done = false;

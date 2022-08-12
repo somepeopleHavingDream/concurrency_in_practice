@@ -6,6 +6,7 @@ package threadcoreknowledge.threadobjectclasscommonmethods;
  * @author yangxin
  * 2019/09/23 22:02
  */
+@SuppressWarnings({"InstantiatingAThreadWithDefaultRunMethod", "AlibabaAvoidManuallyCreateThread"})
 public class Id {
     public static void main(String[] args) {
         Thread thread = new Thread();

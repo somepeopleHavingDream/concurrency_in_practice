@@ -4,7 +4,7 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * 必定发生死锁的情况
- *
+ * <p>
  * 死锁的4个必要条件
  * 1. 互斥条件
  * 2. 请求与保持条件
@@ -14,37 +14,37 @@ import java.util.concurrent.TimeUnit;
  * @author yangxin
  * 2019/10/05 14:51
  */
-@SuppressWarnings("DuplicatedCode")
+@SuppressWarnings({"DuplicatedCode", "AlibabaAvoidManuallyCreateThread"})
 public class MustDeadLock implements Runnable {
 
     private int flag = 1;
 
-    private static final Object o1 = new Object();
-    private static final Object o2 = new Object();
+    private static final Object O1 = new Object();
+    private static final Object O2 = new Object();
 
     @Override
     public void run() {
         System.out.println("flag = " + flag);
         if (flag == 1) {
-            synchronized (o1) {
+            synchronized (O1) {
                 try {
                     TimeUnit.MILLISECONDS.sleep(500);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-                synchronized (o2) {
+                synchronized (O2) {
                     System.out.println("线程1成功拿到两把锁");
                 }
             }
         }
         if (flag == 0) {
-            synchronized (o2) {
+            synchronized (O2) {
                 try {
                     TimeUnit.MILLISECONDS.sleep(500);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-                synchronized (o1) {
+                synchronized (O1) {
                     System.out.println("线程2成功拿到两把锁");
                 }
             }

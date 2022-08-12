@@ -6,11 +6,13 @@ package threadcoreknowledge.singleton;
  * @author yangxin
  * 2019/10/04 18:12
  */
+@SuppressWarnings("unused")
 public class Singleton7 {
     private Singleton7() {
 
     }
 
+    @SuppressWarnings("InstantiationOfUtilityClass")
     private static class SingletonInstance {
         private static final Singleton7 INSTANCE = new Singleton7();
     }
