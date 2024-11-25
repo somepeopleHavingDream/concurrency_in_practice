@@ -1,7 +1,7 @@
 package threadcoreknowledge.threadobjectclasscommonmethods;
 
 /**
- * 用两个线程交替打印0~100的奇偶数，用wait和notify
+ * 用两个线程交替打印 0~100 的奇偶数，用 wait 和 notify
  *
  * @author yangxin
  * 2019/09/20 15:01
@@ -22,7 +22,7 @@ public class WaitNotifyPrintOddEvenWait {
      * 1. 拿到锁，我们就打印
      * 2. 打印完，唤醒其他线程，自己就休眠
      */
-    @SuppressWarnings("AlibabaUndefineMagicConstant")
+    @SuppressWarnings({"AlibabaUndefineMagicConstant", "CallToPrintStackTrace"})
     static class TurningRunner implements Runnable {
 
         @Override

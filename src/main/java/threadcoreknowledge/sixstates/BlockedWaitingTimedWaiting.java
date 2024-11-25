@@ -6,7 +6,7 @@ package threadcoreknowledge.sixstates;
  * @author yangxin
  * 2020/07/17 15:03
  */
-@SuppressWarnings("AlibabaAvoidManuallyCreateThread")
+@SuppressWarnings({"AlibabaAvoidManuallyCreateThread", "CallToPrintStackTrace"})
 public class BlockedWaitingTimedWaiting implements Runnable {
 
     @Override
@@ -30,9 +30,9 @@ public class BlockedWaitingTimedWaiting implements Runnable {
         Thread thread2 = new Thread(runnable);
         thread2.start();
 
-        // 打印出TIMED_WAITING状态，因为正在执行Thread.sleep(1000)
+        // 打印出 TIMED_WAITING 状态，因为正在执行 Thread.sleep(1000)
         System.out.println(thread1.getState());
-        // 打印出BLOCKED状态，因为thread2想拿到sync()的锁，却拿不到
+        // 打印出 BLOCKED 状态，因为 thread2 想拿到 sync() 的锁，却拿不到
         System.out.println(thread2.getState());
 
         try {

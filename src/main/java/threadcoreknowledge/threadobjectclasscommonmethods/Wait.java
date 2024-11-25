@@ -15,6 +15,7 @@ public class Wait {
 
     private static final Object OBJECT = new Object();
 
+    @SuppressWarnings("CallToPrintStackTrace")
     static class Thread1 extends Thread {
 
         @Override

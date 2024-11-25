@@ -8,7 +8,7 @@ import java.util.concurrent.TimeUnit;
  * @author yangxin
  * 2019/09/23 17:56
  */
-@SuppressWarnings({"AlibabaAvoidManuallyCreateThread", "AlibabaRemoveCommentedCode"})
+@SuppressWarnings({"AlibabaAvoidManuallyCreateThread", "AlibabaRemoveCommentedCode", "CallToPrintStackTrace"})
 public class JoinPrinciple {
 
     @SuppressWarnings("SynchronizationOnLocalVariableOrMethodParameter")

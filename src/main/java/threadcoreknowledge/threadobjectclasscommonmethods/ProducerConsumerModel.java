@@ -68,6 +68,7 @@ class Consumer implements Runnable {
  * @author yangxin
  * 2020/07/23 20:36
  */
+@SuppressWarnings("CallToPrintStackTrace")
 class EventStorage {
 
     private final int maxSize;
@@ -92,7 +93,7 @@ class EventStorage {
     }
 
     synchronized void take() {
-        while (storage.size() == 0) {
+        while (storage.isEmpty()) {
             try {
                 wait();
             } catch (InterruptedException e) {

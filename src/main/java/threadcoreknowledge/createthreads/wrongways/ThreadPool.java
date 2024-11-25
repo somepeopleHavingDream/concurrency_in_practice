@@ -24,6 +24,7 @@ public class ThreadPool {
  * @author yangxin
  * 2020/05/09 21:34
  */
+@SuppressWarnings("CallToPrintStackTrace")
 class Task implements Runnable{
 
     @Override

@@ -6,7 +6,7 @@ package threadcoreknowledge.threadobjectclasscommonmethods;
  * @author yangxin
  * 2019/09/20 11:51
  */
-@SuppressWarnings({"AlibabaAvoidManuallyCreateThread", "WaitWhileHoldingTwoLocks"})
+@SuppressWarnings({"AlibabaAvoidManuallyCreateThread", "CallToPrintStackTrace"})
 public class WaitNotifyReleaseOwnMonitor {
 
     private static final Object RESOURCE_A = new Object();
